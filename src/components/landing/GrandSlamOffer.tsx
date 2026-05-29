@@ -110,44 +110,44 @@ export const GrandSlamOffer = () => {
       {/* Background Pencil Sketches surrounding the content */}
       <motion.div
         style={{ y: ySketch }}
-        className="absolute top-[10%] left-[-150px] w-[350px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute top-[-3%] left-[-60px] w-[450px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
       >
         <img
-          src="/sketch_contract_scroll.png"
-          alt="Contract Scroll Sketch"
+          src="/sketch_offer_free.png"
+          alt="100% Free Offer Sketch"
           className="w-full h-full object-contain scale-[1.08] drop-shadow-[2px_6px_12px_rgba(0,0,0,0.15)]"
          style={{ clipPath: "inset(5%)" }} />
       </motion.div>
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute top-[5%] right-[-150px] w-[350px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute top-[-5%] right-[-30px] w-[450px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.18] overflow-hidden"
       >
         <img
-          src="/sketch_toolbox_wrenches.png"
-          alt="Toolbox and Wrenches Sketch"
+          src="/sketch_offer_upload.png"
+          alt="Upload Estimates Sketch"
           className="w-full h-full object-contain scale-[1.08] drop-shadow-[2px_6px_12px_rgba(0,0,0,0.15)]"
          style={{ clipPath: "inset(5%)" }} />
       </motion.div>
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute bottom-[15%] left-[-150px] w-[350px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute bottom-[3%] left-[-10px] w-[450px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
       >
         <img
-          src="/sketch_drafting_tools.png"
-          alt="Drafting Tools Sketch"
+          src="/sketch_offer_auditor.png"
+          alt="Carrier Auditor Sketch"
           className="w-full h-full object-contain scale-[1.08] drop-shadow-[2px_6px_12px_rgba(0,0,0,0.15)]"
          style={{ clipPath: "inset(5%)" }} />
       </motion.div>
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute bottom-[5%] right-[-150px] w-[350px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute bottom-[3%] right-[-40px] w-[50px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.18] overflow-hidden"
       >
         <img
-          src="/sketch_house_framing.png"
-          alt="House Framing Sketch"
+          src="/sketch_offer_riskfree.png"
+          alt="Risk-Free Clause Sketch"
           className="w-full h-full object-contain scale-[1.08] drop-shadow-[2px_6px_12px_rgba(0,0,0,0.15)]"
          style={{ clipPath: "inset(5%)" }} />
       </motion.div>

@@ -127,44 +127,44 @@ export const Faq = () => {
       {/* Background Pencil Sketches surrounding the content */}
       <motion.div
         style={{ y: ySketch }}
-        className="absolute top-[10%] left-[-150px] w-[350px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute top-[-5%] left-[-40px] w-[450px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
       >
         <img
-          src="/sketch_clipboard_contract.png"
-          alt="Clipboard Sketch"
+          src="/sketch_faq_3d.png"
+          alt="FAQ Question Mark Bubble Sketch"
           className="w-full h-full object-contain scale-[1.08] drop-shadow-[2px_6px_12px_rgba(0,0,0,0.15)]"
          style={{ clipPath: "inset(5%)" }} />
       </motion.div>
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute top-[5%] right-[-150px] w-[350px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute top-[-1%] right-[-40px] w-[450px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
       >
         <img
-          src="/sketch_drafting_tools.png"
-          alt="Drafting Tools Sketch"
+          src="/sketch_faq_book.png"
+          alt="FAQ Book and Magnifier Sketch"
           className="w-full h-full object-contain scale-[1.08] drop-shadow-[2px_6px_12px_rgba(0,0,0,0.15)]"
          style={{ clipPath: "inset(5%)" }} />
       </motion.div>
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute bottom-[15%] left-[-150px] w-[350px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute bottom-[-3%] left-[-10px] w-[450px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
       >
         <img
-          src="/sketch_toolbox_wrenches.png"
-          alt="Toolbox and Wrenches Sketch"
+          src="/sketch_faq_laptop.png"
+          alt="FAQ Laptop Support Sketch"
           className="w-full h-full object-contain scale-[1.08] drop-shadow-[2px_6px_12px_rgba(0,0,0,0.15)]"
          style={{ clipPath: "inset(5%)" }} />
       </motion.div>
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute bottom-[5%] right-[-150px] w-[350px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute bottom-[-5%] right-[-10px] w-[450px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
       >
         <img
-          src="/sketch_hardhat_hammer.png"
-          alt="Hardhat and Hammer Sketch"
+          src="/sketch_faq_security.png"
+          alt="FAQ Security Shield Sketch"
           className="w-full h-full object-contain scale-[1.08] drop-shadow-[2px_6px_12px_rgba(0,0,0,0.15)]"
          style={{ clipPath: "inset(5%)" }} />
       </motion.div>
