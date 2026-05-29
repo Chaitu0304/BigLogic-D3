@@ -187,18 +187,18 @@ export const RoiCalculator = () => {
       {/* Background Pencil Sketches surrounding the content closer to content, larger, and more opaque */}
       <motion.div
         style={{ y: ySketch }}
-        className="absolute top-[10%] left-[-80px] lg:left-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute top-[-5%] left-[-80px] lg:left-[-180px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.1] overflow-hidden"
       >
         <img
-          src="/sketch_excavator_crane.png"
-          alt="Excavator and Crane Sketch"
+          src="/sketch_excel_compiler.png"
+          alt="Excel Compiler Sketch"
           className="w-full h-full object-contain scale-[1.08] drop-shadow-[2px_6px_12px_rgba(0,0,0,0.15)]"
          style={{ clipPath: "inset(5%)" }} />
       </motion.div>
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute top-[5%] right-[-80px] lg:right-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute bottom-[5%] left-[-80px] lg:left-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
       >
         <img
           src="/sketch_hourglass_clock.png"
@@ -209,7 +209,7 @@ export const RoiCalculator = () => {
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute bottom-[15%] left-[-80px] lg:left-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute top-[3%] right-[-80px] lg:right-[20px] w-[350px] h-[350px] lg:w-[600px] lg:h-[600px] pointer-events-none z-0 mix-blend-multiply opacity-[0.13] overflow-hidden"
       >
         <img
           src="/sketch_calculator_ruler.png"
@@ -220,11 +220,11 @@ export const RoiCalculator = () => {
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute bottom-[5%] right-[-80px] lg:right-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute bottom-[3%] right-[-80px] lg:right-[-100px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
       >
         <img
-          src="/sketch_drafting_tools.png"
-          alt="Drafting Tools Sketch"
+          src="/sketch_ai_draw_scheduler.png"
+          alt="AI Draw Scheduler Sketch"
           className="w-full h-full object-contain scale-[1.08] drop-shadow-[2px_6px_12px_rgba(0,0,0,0.15)]"
          style={{ clipPath: "inset(5%)" }} />
       </motion.div>

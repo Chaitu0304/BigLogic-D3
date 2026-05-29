@@ -93,23 +93,23 @@ export const Testimonials = () => {
                 {proof.map((item, index) => (
                   <div 
                     key={index} 
-                    className="bg-white border border-[#E5E5E5] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] rounded-3xl flex flex-col justify-between relative overflow-visible w-[380px] h-[380px] shrink-0 group hover:border-[#0A0A0A]/20 transition-all duration-300"
+                    className="bg-gradient-to-b from-white to-[#FAF9F6] border border-black/[0.06] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.02)] rounded-3xl flex flex-col justify-between relative overflow-visible w-[380px] h-[380px] shrink-0 group hover:border-black/[0.12] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-300"
                   >
                     {/* Giant Watermark Quote Decoration */}
-                    <div className="absolute top-6 right-8 text-black/3 z-0 transition-colors group-hover:text-black/5 pointer-events-none">
+                    <div className="absolute top-6 right-8 text-black/[0.015] z-0 transition-colors group-hover:text-black/[0.035] pointer-events-none">
                       <Quote className="w-16 h-16 fill-current rotate-180" />
                     </div>
 
                     <div className="relative z-10 text-left">
                       {/* Stars */}
-                      <div className="flex items-center gap-1 mb-6 text-[#0A0A0A]">
+                      <div className="flex items-center gap-1 mb-6">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 fill-current" />
+                          <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                         ))}
                       </div>
 
                       {/* Big Metric Callout */}
-                      <h3 className="font-tech-landeros text-sm md:text-base font-bold mb-4 text-[#0A0A0A] leading-snug border-b border-black/8 pb-3">
+                      <h3 className="font-tech-landeros text-sm md:text-base font-black mb-4 text-[#0A0A0A] leading-snug border-b border-black/[0.06] pb-3 tracking-tight">
                         "{item.metric}"
                       </h3>
 
@@ -120,14 +120,14 @@ export const Testimonials = () => {
                     </div>
 
                     {/* Author Info */}
-                    <div className="flex items-center justify-between border-t border-black/5 pt-4 mt-auto bg-black/2 -mx-8 -mb-8 p-6 rounded-b-[22px] relative z-10">
+                    <div className="flex items-center justify-between border-t border-black/[0.05] pt-4 mt-auto bg-[#F5F5F3]/50 -mx-8 -mb-8 p-6 rounded-b-[24px] relative z-10">
                       <div className="text-left">
                         <h4 className="font-bold text-xs text-[#0A0A0A] font-tech-landeros">{item.author}</h4>
                         <p className="text-[10px] font-bold text-[#6B6B6B] mt-0.5">{item.role}</p>
                         <p className="text-[9px] font-bold text-[#6B6B6B] uppercase font-tech-landeros mt-0.5">{item.location}</p>
                       </div>
                       {item.verified && (
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#F8F8F8] border border-black/10 text-[9px] font-bold uppercase tracking-wider text-[#0A0A0A] shrink-0 shadow-sm">
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white border border-black/10 text-[9px] font-bold uppercase tracking-wider text-[#0A0A0A] shrink-0 shadow-sm">
                           <ShieldCheck className="w-3 h-3 text-emerald-400" />
                           <span>VERIFIED</span>
                         </span>
@@ -142,23 +142,23 @@ export const Testimonials = () => {
                 {proof.map((item, index) => (
                   <div 
                     key={`dup-${index}`} 
-                    className="bg-white border border-[#E5E5E5] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.06)] rounded-3xl flex flex-col justify-between relative overflow-visible w-[380px] h-[380px] shrink-0 group hover:border-[#0A0A0A]/20 transition-all duration-300"
+                    className="bg-gradient-to-b from-white to-[#FAF9F6] border border-black/[0.06] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.02)] rounded-3xl flex flex-col justify-between relative overflow-visible w-[380px] h-[380px] shrink-0 group hover:border-black/[0.12] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-300"
                   >
                     {/* Giant Watermark Quote Decoration */}
-                    <div className="absolute top-6 right-8 text-black/3 z-0 transition-colors group-hover:text-black/5 pointer-events-none">
+                    <div className="absolute top-6 right-8 text-black/[0.015] z-0 transition-colors group-hover:text-black/[0.035] pointer-events-none">
                       <Quote className="w-16 h-16 fill-current rotate-180" />
                     </div>
 
                     <div className="relative z-10 text-left">
                       {/* Stars */}
-                      <div className="flex items-center gap-1 mb-6 text-[#0A0A0A]">
+                      <div className="flex items-center gap-1 mb-6">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 fill-current" />
+                          <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                         ))}
                       </div>
 
                       {/* Big Metric Callout */}
-                      <h3 className="font-tech-landeros text-sm md:text-base font-bold mb-4 text-[#0A0A0A] leading-snug border-b border-black/8 pb-3">
+                      <h3 className="font-tech-landeros text-sm md:text-base font-black mb-4 text-[#0A0A0A] leading-snug border-b border-black/[0.06] pb-3 tracking-tight">
                         "{item.metric}"
                       </h3>
 
@@ -169,14 +169,14 @@ export const Testimonials = () => {
                     </div>
 
                     {/* Author Info */}
-                    <div className="flex items-center justify-between border-t border-black/5 pt-4 mt-auto bg-black/2 -mx-8 -mb-8 p-6 rounded-b-[22px] relative z-10">
+                    <div className="flex items-center justify-between border-t border-black/[0.05] pt-4 mt-auto bg-[#F5F5F3]/50 -mx-8 -mb-8 p-6 rounded-b-[24px] relative z-10">
                       <div className="text-left">
                         <h4 className="font-bold text-xs text-[#0A0A0A] font-tech-landeros">{item.author}</h4>
                         <p className="text-[10px] font-bold text-[#6B6B6B] mt-0.5">{item.role}</p>
                         <p className="text-[9px] font-bold text-[#6B6B6B] uppercase font-tech-landeros mt-0.5">{item.location}</p>
                       </div>
                       {item.verified && (
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-[#F8F8F8] border border-black/10 text-[9px] font-bold uppercase tracking-wider text-[#0A0A0A] shrink-0 shadow-sm">
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white border border-black/10 text-[9px] font-bold uppercase tracking-wider text-[#0A0A0A] shrink-0 shadow-sm">
                           <ShieldCheck className="w-3 h-3 text-emerald-400" />
                           <span>VERIFIED</span>
                         </span>
@@ -194,44 +194,44 @@ export const Testimonials = () => {
       {/* Background Pencil Sketches surrounding the content closer to content, larger, and more opaque */}
       <motion.div
         style={{ y: ySketch }}
-        className="absolute top-[10%] left-[-80px] lg:left-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute bottom-[-10%] left-[-80px] lg:left-[-140px] w-[350px] h-[350px] lg:w-[600px] lg:h-[600px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
       >
         <img
-          src="/sketch_blueprint_layout.png"
-          alt="Blueprint Layout Sketch"
+          src="/sketch_testimonial_agreement.png"
+          alt="Testimonial Agreement Sketch"
           className="w-full h-full object-contain scale-[1.08] drop-shadow-[2px_6px_12px_rgba(0,0,0,0.15)]"
          style={{ clipPath: "inset(5%)" }} />
       </motion.div>
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute top-[5%] right-[-80px] lg:right-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute top-[1%] right-[-80px] lg:right-[20px] w-[350px] h-[350px] lg:w-[600px] lg:h-[600px] pointer-events-none z-0 mix-blend-multiply opacity-[0.2] overflow-hidden"
       >
         <img
-          src="/sketch_hourglass_clock.png"
-          alt="Hourglass Clock Sketch"
+          src="/sketch_testimonial_stars.png"
+          alt="Testimonial Stars Sketch"
           className="w-full h-full object-contain scale-[1.08] drop-shadow-[2px_6px_12px_rgba(0,0,0,0.15)]"
          style={{ clipPath: "inset(5%)" }} />
       </motion.div>
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute bottom-[15%] left-[-80px] lg:left-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute bottom-[-3%] right-[-80px] lg:right-[-180px] w-[350px] h-[350px] lg:w-[600px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
       >
         <img
-          src="/sketch_hardhat_hammer.png"
-          alt="Hardhat and Hammer Sketch"
+          src="/sketch_testimonial_phone.png"
+          alt="Testimonial Phone Sketch"
           className="w-full h-full object-contain scale-[1.08] drop-shadow-[2px_6px_12px_rgba(0,0,0,0.15)]"
          style={{ clipPath: "inset(5%)" }} />
       </motion.div>
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute bottom-[5%] right-[-80px] lg:right-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute top-[-10%] left-[-80px] lg:left-[-120px] w-[350px] h-[350px] lg:w-[600px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
       >
         <img
-          src="/sketch_contract_scroll.png"
-          alt="Contract Scroll Sketch"
+          src="/sketch_testimonial_megaphone.png"
+          alt="Testimonial Megaphone Sketch"
           className="w-full h-full object-contain scale-[1.08] drop-shadow-[2px_6px_12px_rgba(0,0,0,0.15)]"
          style={{ clipPath: "inset(5%)" }} />
       </motion.div>
