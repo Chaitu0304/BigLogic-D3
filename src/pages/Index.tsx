@@ -1,14 +1,10 @@
 import { Navbar } from "@/components/landing/Navbar";
 import { Hero } from "@/components/landing/Hero";
 import { OfferTransformation } from "@/components/landing/OfferTransformation";
-import { Services } from "@/components/landing/Services";
 import { HowItWorks } from "@/components/landing/HowItWorks";
+import { Services } from "@/components/landing/Services";
 import { RoiCalculator } from "@/components/landing/RoiCalculator";
-import { Pricing } from "@/components/landing/Pricing";
 import { Testimonials } from "@/components/landing/Testimonials";
-import { WhoItsFor } from "@/components/landing/WhoItsFor";
-import { WhyBigLogic } from "@/components/landing/WhyBigLogic";
-import { TrustSecurity } from "@/components/landing/TrustSecurity";
 import { FomoScarcity } from "@/components/landing/FomoScarcity";
 import { GrandSlamOffer } from "@/components/landing/GrandSlamOffer";
 import Faq from "@/components/landing/Faq";
@@ -28,14 +24,10 @@ const Index = () => {
       <Navbar />
       <Hero />
       <OfferTransformation />
-      <Services />
       <HowItWorks />
+      <Services />
       <RoiCalculator />
-      <Pricing />
       <Testimonials />
-      <WhoItsFor />
-      <WhyBigLogic />
-      <TrustSecurity />
       <FomoScarcity />
       <GrandSlamOffer />
       <Faq />

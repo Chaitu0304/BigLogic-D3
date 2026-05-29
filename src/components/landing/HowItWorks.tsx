@@ -21,6 +21,7 @@ export const HowItWorks = () => {
       title: "Upload The Estimate",
       description: "Drag and drop any standard PDF estimate or ESX file directly into the secure portal. Zero manual mapping or pre-formatting is required.",
       badge: "Supports PDF & ESX",
+      sketch: "/sketch_zero_complexity_upload.png",
     },
     {
       num: "02",
@@ -28,6 +29,7 @@ export const HowItWorks = () => {
       title: "Agents Go To Work",
       description: "Our Gemini-powered agents parse the estimate, extract hidden material items, verify carrier compliance, and build the lender-draw schedules.",
       badge: "Average time: 45 seconds",
+      sketch: "/sketch_zero_complexity_agents.png",
     },
     {
       num: "03",
@@ -35,6 +37,7 @@ export const HowItWorks = () => {
       title: "Submit & Get Paid",
       description: "Download ready-to-use, professional Excel spreadsheets, draw schedules, and carrier-ready compliance audit files to accelerate funding.",
       badge: "Draws cleared in 48 hours",
+      sketch: "/sketch_zero_complexity_paid.png",
     }
   ];
 
@@ -67,37 +70,75 @@ export const HowItWorks = () => {
           {steps.map((step, index) => {
             const Icon = step.icon;
             return (
-              <ScrollRevealChild key={index} className="h-full flex relative z-10">
-                <div 
-                  className="bg-white border border-black/5 p-8 rounded-3xl flex flex-col justify-between hover-premium-card z-10 group w-full"
-                >
-                  <div>
-                    {/* Step Header */}
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="w-14 h-14 rounded-2xl bg-[#F0F0F0] border border-black/5 flex items-center justify-center text-[#0A0A0A] group-hover:bg-[#0A0A0A] group-hover:text-white transition-all duration-300 shadow-sm">
-                        <Icon className="w-6 h-6 stroke-[2]" />
+              <ScrollRevealChild key={index} className="h-[380px] flex relative z-10">
+                {/* 3D Card Flip Container */}
+                <div className="group w-full h-full [perspective:1500px]">
+                  <div 
+                    className="relative w-full h-full transition-transform [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]"
+                    style={{
+                      transitionDuration: "800ms",
+                      transitionTimingFunction: "cubic-bezier(0.175, 0.885, 0.32, 1.1)"
+                    }}
+                  >
+                    
+                    {/* Front Face */}
+                    <div className="absolute inset-0 w-full h-full bg-white border border-black/5 p-8 rounded-3xl flex flex-col justify-between [backface-visibility:hidden] z-10 shadow-sm hover:shadow-md transition-shadow duration-300">
+                      <div>
+                        {/* Step Header */}
+                        <div className="flex items-center justify-between mb-6">
+                          <div className="w-14 h-14 rounded-2xl bg-[#F0F0F0] border border-black/5 flex items-center justify-center text-[#0A0A0A] group-hover:bg-[#0A0A0A] group-hover:text-white transition-all duration-300 shadow-sm">
+                            <Icon className="w-6 h-6 stroke-[2]" />
+                          </div>
+                          <span className="font-display-landeros text-3xl font-black text-black/20 group-hover:text-[#0A0A0A] transition-colors">{step.num}</span>
+                        </div>
+       
+                        {/* Title */}
+                        <h3 className="font-tech-landeros text-xl font-bold mb-4 text-[#0A0A0A]">
+                          {step.title}
+                        </h3>
+       
+                        {/* Description */}
+                        <p className="font-semibold text-sm leading-relaxed text-[#6B6B6B]">
+                          {step.description}
+                        </p>
                       </div>
-                      <span className="font-display-landeros text-3xl font-black text-black/20 group-hover:text-[#0A0A0A] transition-colors">{step.num}</span>
+       
+                      {/* Badge Tag */}
+                      <div className="mt-4 pt-4 border-t border-black/5">
+                        <span className="inline-block px-3 py-1 bg-black/5 border border-black/10 rounded-full text-xs font-bold uppercase tracking-wider text-[#0A0A0A]">
+                          {step.badge}
+                        </span>
+                      </div>
                     </div>
-   
-                    {/* Title */}
-                    <h3 className="font-tech-landeros text-xl font-bold mb-4 text-[#0A0A0A]">
-                      {step.title}
-                    </h3>
-   
-                    {/* Description */}
-                    <p className="font-semibold text-sm leading-relaxed text-[#6B6B6B] mb-6">
-                      {step.description}
-                    </p>
+
+                    {/* Back Face (Sketch Reveal) */}
+                    <div className="absolute inset-0 w-full h-full bg-[#FCFCFC] border border-black/10 p-3 pb-4 rounded-3xl flex flex-col justify-between [backface-visibility:hidden] [transform:rotateY(180deg)] overflow-hidden shadow-md">
+                      {/* Subtle Grid overlay */}
+                      <div className="absolute inset-0 bg-grid-landeros opacity-[0.25] pointer-events-none" />
+                      
+                      {/* Decorative step number watermark */}
+                      <div className="absolute top-4 right-6 text-black/[0.03] font-display-landeros text-7xl font-black select-none pointer-events-none">
+                        {step.num}
+                      </div>
+
+                      {/* Sketch Container */}
+                      <div className="relative flex-1 w-full flex items-center justify-center min-h-0">
+                        <img 
+                          src={step.sketch} 
+                          alt={step.title}
+                          className="max-w-[95%] max-h-[92%] object-contain select-none pointer-events-none mix-blend-multiply opacity-[0.85] transition-transform duration-700 group-hover:scale-105" 
+                        />
+                      </div>
+
+                      {/* Subtle caption */}
+                      <div className="relative z-10 text-center">
+                        <span className="text-[10px] font-bold tracking-widest text-black/40 uppercase font-sans-landeros">
+                          {step.title}
+                        </span>
+                      </div>
+                    </div>
+
                   </div>
-   
-                  {/* Badge Tag */}
-                  <div className="mt-4 pt-4 border-t border-black/5">
-                    <span className="inline-block px-3 py-1 bg-black/5 border border-black/10 rounded-full text-xs font-bold uppercase tracking-wider text-[#0A0A0A]">
-                      {step.badge}
-                    </span>
-                  </div>
-   
                 </div>
               </ScrollRevealChild>
             );
@@ -123,7 +164,7 @@ export const HowItWorks = () => {
           WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)",
           maskImage: "radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)"
         }}
-        className="absolute top-[10%] left-[-80px] lg:left-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.14] overflow-hidden"
+        className="absolute bottom-[5%] left-[-100px] lg:left-[-150px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.14] overflow-hidden"
       >
         <img
           src="/sketch_pdf_upload_cloud.png"
@@ -138,7 +179,7 @@ export const HowItWorks = () => {
           WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)",
           maskImage: "radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)"
         }}
-        className="absolute top-[5%] right-[-80px] lg:right-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.14] overflow-hidden"
+        className="absolute top-[5%] right-[-80px] lg:right-[30px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.14] overflow-hidden"
       >
         <img
           src="/sketch_ai_processor_gears.png"
@@ -153,7 +194,7 @@ export const HowItWorks = () => {
           WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)",
           maskImage: "radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)"
         }}
-        className="absolute bottom-[15%] left-[-80px] lg:left-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.14] overflow-hidden"
+        className="absolute bottom-[3%] right-[-80px] lg:right-[-30px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.14] overflow-hidden"
       >
         <img
           src="/sketch_draw_payout_chart.png"
@@ -168,7 +209,7 @@ export const HowItWorks = () => {
           WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)",
           maskImage: "radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)"
         }}
-        className="absolute bottom-[5%] right-[-80px] lg:right-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.14] overflow-hidden"
+        className="absolute top-[-1%] left-[-80px] lg:left-[-150px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.1] overflow-hidden"
       >
         <img
           src="/sketch_cleared_draws_calendar.png"

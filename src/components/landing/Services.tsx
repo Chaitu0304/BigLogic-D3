@@ -109,7 +109,7 @@ export const Services = () => {
           
           <h2 className="text-4xl md:text-5xl font-black mb-6 leading-[1.08] tracking-tight font-display-landeros text-[#0A0A0A]">
             Five Dedicated AI Agents. <br />
-            Working 24/7/365 Inside Your Business.
+            Working 24/7  Inside Your Business.
           </h2>
           
           <p className="text-lg md:text-xl font-semibold text-[#6B6B6B] max-w-3xl leading-relaxed">
