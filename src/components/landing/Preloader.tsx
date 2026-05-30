@@ -3,8 +3,11 @@ import { motion } from "framer-motion";
 
 export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
   const [progress, setProgress] = useState(0);
-  const [loadingText, setLoadingText] = useState("INITIALIZING DRAFTING INFRASTRUCTURE...");
+  const [loadingText, setLoadingText] = useState("CONNECTING TO SECURE NEURAL INFRASTRUCTURE...");
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [useFallback, setUseFallback] = useState(false);
+  const fallbackTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const loadingStates = [
     { threshold: 0, text: "CONNECTING TO SECURE NEURAL INFRASTRUCTURE..." },
@@ -14,12 +17,66 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
     { threshold: 90, text: "ESTABLISHING CALM OPERATOR PIPELINE..." }
   ];
 
+  // Video Time Update Listener (Desktop Realtime Sync)
+  const handleTimeUpdate = () => {
+    const video = videoRef.current;
+    if (!video || useFallback) return;
+    const duration = video.duration || 4; // fallback duration if NaN
+    const percent = Math.min((video.currentTime / duration) * 100, 100);
+    setProgress(Math.floor(percent));
+
+    const activeState = [...loadingStates]
+      .reverse()
+      .find(state => percent >= state.threshold);
+    if (activeState) {
+      setLoadingText(activeState.text);
+    }
+  };
+
+  // Video Playback Finished Listener
+  const handleVideoEnded = () => {
+    if (useFallback) return;
+    setProgress(100);
+    setTimeout(() => {
+      onComplete();
+    }, 600);
+  };
+
+  // Video Started Playback (Disable Fallback Ticker)
+  const handlePlay = () => {
+    if (fallbackTimerRef.current) {
+      clearTimeout(fallbackTimerRef.current);
+      fallbackTimerRef.current = null;
+    }
+    setUseFallback(false);
+  };
+
+  // Fallback Timer Initialization
   useEffect(() => {
-    let currentProgress = 0;
-    
-    // Smooth progressive ticking
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      setUseFallback(true);
+      return;
+    }
+
+    fallbackTimerRef.current = setTimeout(() => {
+      setUseFallback(true);
+    }, 1500); // 1.5s margin to let the browser boot the video
+
+    return () => {
+      if (fallbackTimerRef.current) {
+        clearTimeout(fallbackTimerRef.current);
+      }
+    };
+  }, []);
+
+  // Simulated Fallback Ticker (For Mobile or slow desktop connections)
+  useEffect(() => {
+    if (!useFallback) return;
+
+    let currentProgress = progress;
     const interval = setInterval(() => {
-      const increment = Math.floor(Math.random() * 8) + 2; 
+      const increment = Math.floor(Math.random() * 6) + 2; 
       currentProgress = Math.min(currentProgress + increment, 100);
       setProgress(currentProgress);
 
@@ -34,12 +91,12 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
         clearInterval(interval);
         setTimeout(() => {
           onComplete();
-        }, 800);
+        }, 700);
       }
     }, 60);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [useFallback]);
 
   // 60FPS Cinematic Floating Dust Particles Canvas Loop
   useEffect(() => {
@@ -143,7 +200,7 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
         filter: "blur(12px)",
         transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] }
       }}
-      className="fixed inset-0 z-[9999] bg-[#0B0B0C] flex flex-col items-center justify-center font-sans-landeros text-white select-none pointer-events-auto overflow-hidden w-full h-full"
+      className="fixed inset-0 z-[9999] bg-[#000000] flex flex-col items-center justify-center font-sans-landeros text-white select-none pointer-events-auto overflow-hidden w-full h-full"
     >
       {/* 1. CINEMATIC LUXURY BACKDROP: Dust Canvas, Vignette, Spotlights */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none z-10" />
@@ -160,7 +217,7 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
       />
       
       {/* Subtle Cinematic Vignette Overlay (Dark edges focused to center) */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_30%,_rgba(6,6,6,0.92)_100%)] pointer-events-none z-15" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_30%,_rgba(0,0,0,0.95)_100%)] pointer-events-none z-15" />
 
       {/* 2. CENTERED CINEMATIC VIDEO + MOBILE LOADING RING & LOGO */}
       <div className="absolute inset-0 w-full h-full z-10 overflow-hidden flex items-center justify-center pointer-events-none">
@@ -178,13 +235,15 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
         />
 
         <video
+          ref={videoRef}
           src="/vid_mp_ (online-video-cutter.com).mp4"
           autoPlay
-          loop
           muted
           playsInline
-          className="w-full h-full max-w-[85vw] max-h-[68vh] md:max-w-[800px] md:max-h-[530px] object-contain opacity-95 z-20"
-          poster="/logo-icon.png"
+          onPlay={handlePlay}
+          onTimeUpdate={handleTimeUpdate}
+          onEnded={handleVideoEnded}
+          className="w-full h-full max-w-[85vw] max-h-[68vh] md:max-w-[800px] md:max-h-[530px] object-contain opacity-95 z-20 hidden md:block mix-blend-screen"
         />
       </div>
 

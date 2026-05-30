@@ -179,7 +179,6 @@ export const Hero = () => {
       </motion.div>
 
 
-      
       <div className="container relative z-10 mx-auto px-4 max-w-7xl">
         <div className="flex flex-col items-center text-center max-w-5xl mx-auto relative">
           

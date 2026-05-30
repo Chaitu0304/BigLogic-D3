@@ -192,7 +192,7 @@ export const CTA = () => {
                 {/* Decorative absolute glow overlay */}
                 <div className="absolute -top-20 -left-20 w-40 h-40 bg-emerald-500/5 rounded-full blur-[40px] pointer-events-none" />
                 
-                <div className="absolute -top-3 left-6 px-3 py-1 rounded-full bg-white text-[#0A0A0A] text-[9px] font-bold uppercase tracking-widest font-tech-landeros shadow-md border border-white/10 select-none">
+                <div className="absolute top-3 left-6 px-3 py-1 rounded-full bg-white text-[#0A0A0A] text-[9px] font-bold uppercase tracking-widest font-tech-landeros shadow-md border border-white/10 select-none">
                   THE 10-HOUR DOUBLE GUARANTEE
                 </div>
                 
@@ -223,9 +223,9 @@ export const CTA = () => {
             </div>
 
             {/* Right Column - Premium Glass Receipt Invoice (5 cols) */}
-            <div className="lg:col-span-5 bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[28px] shadow-2xl p-4 sm:p-6 md:p-8 flex flex-col justify-between text-left hover-premium-card z-10 overflow-hidden relative group">
-              {/* Approved stamp watermark effect */}
-              <div className="absolute top-4 right-4 border-2 border-emerald-500/30 text-emerald-400/50 text-[9px] font-bold uppercase px-3 py-1 rounded-lg rotate-[15deg] tracking-widest pointer-events-none select-none font-tech-landeros shadow-[0_0_10px_rgba(16,185,129,0.05)] bg-[#121212]/30">
+            <div className="lg:col-span-5 bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[28px] shadow-2xl p-4 sm:p-6 md:p-8 flex flex-col justify-between text-left hover-premium-card z-10 overflow-visible relative group">
+              {/* Approved stamp legend effect overlapping the top border */}
+              <div className="absolute top-0 left-8 sm:left-12 -translate-y-1/2 border-2 border-emerald-500 bg-[#0A0D0C] text-emerald-400 text-[10px] font-black uppercase px-4 py-1.5 rounded-xl tracking-widest select-none font-tech-landeros shadow-[0_4px_15px_rgba(16,185,129,0.25),_inset_0_1px_1px_rgba(255,255,255,0.1)] z-20 group-hover:scale-105 group-hover:shadow-[0_6px_22px_rgba(16,185,129,0.4)] transition-all duration-300">
                 APPROVED PROPOSAL
               </div>
               

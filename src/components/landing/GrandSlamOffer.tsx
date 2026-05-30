@@ -76,11 +76,10 @@ export const GrandSlamOffer = () => {
                 </ul>
               </div>
    
-              <div className="md:col-span-5 bg-[#F0F0F0] border border-black/10 rounded-2xl p-6 text-center flex flex-col justify-between h-full relative">
-                <div className="absolute top-2 right-2">
-                  <span className="px-2 py-0.5 bg-white text-black text-xs font-bold rounded uppercase tracking-wider font-tech-landeros">
-                    BETA SPECIAL
-                  </span>
+              <div className="md:col-span-5 bg-[#F0F0F0] border border-black/10 rounded-2xl p-6 text-center flex flex-col justify-between h-full relative overflow-visible">
+                {/* Beta Special Legend overlapping the top border */}
+                <div className="absolute top-0 right-6 -translate-y-1/2 border-2 border-[#0A0A0A] bg-[#0A0A0A] text-white text-[10px] font-black uppercase px-3.5 py-1.5 rounded-xl tracking-widest select-none font-tech-landeros shadow-sm z-20">
+                  BETA SPECIAL
                 </div>
                 
                 <div>
