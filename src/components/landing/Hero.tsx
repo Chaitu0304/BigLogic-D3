@@ -187,7 +187,7 @@ export const Hero = () => {
           <motion.div 
             initial={{ opacity: 0, y: -15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/5 border border-black/10 text-xs font-bold text-[#0A0A0A] tracking-wide mb-8 shadow-sm"
           >
             <Sparkles className="w-4 h-4 text-[#0A0A0A]" />
@@ -196,20 +196,39 @@ export const Hero = () => {
 
           {/* Centered Satoshi Bold Headline */}
           <motion.h1 
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] font-black leading-[1.05] tracking-tight mb-8 font-display-landeros text-[#0A0A0A] max-w-4xl"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.08,
+                  delayChildren: 0.15,
+                }
+              }
+            }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] font-black leading-[1.05] tracking-tight mb-8 font-display-landeros text-[#0A0A0A] max-w-4xl flex flex-wrap justify-center gap-x-3.5 gap-y-1.5"
           >
-            YOU DON’T NEED <br className="hidden sm:inline" />
-            MORE <span className="underline decoration-black/30">OFFICE STAFF.</span>
+            {["YOU", "DON’T", "NEED", "MORE", "OFFICE", "STAFF."].map((word, idx) => (
+              <span key={idx} className="overflow-hidden inline-block py-1 -my-1">
+                <motion.span
+                  variants={{
+                    hidden: { y: "110%" },
+                    visible: { y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+                  }}
+                  className={`inline-block ${word === "OFFICE" || word === "STAFF." ? "underline decoration-black/30" : ""}`}
+                >
+                  {word}
+                </motion.span>
+              </span>
+            ))}
           </motion.h1>
 
           {/* Centered Subheading */}
           <motion.p 
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.9, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
             className="text-lg md:text-xl font-semibold leading-relaxed mb-4 max-w-3xl text-[#2A2A2A] z-20"
           >
             BIGlogic automates estimates, contracts, compliance, billing, and communication — so your team can focus on winning more jobs.
@@ -239,7 +258,7 @@ export const Hero = () => {
                   element.scrollIntoView({ behavior: "smooth", block: "center" });
                 }
               }}
-              className="btn-landeros-secondary h-14 px-8 text-xs md:text-sm flex items-center justify-center gap-2.5 font-bold shrink-0 w-full sm:w-auto border border-black/10 bg-white text-[#0A0A0A] group"
+              className="btn-landeros-secondary h-14 px-8 text-xs md:text-sm flex items-center justify-center gap-2.5 font-bold shrink-0 w-full sm:w-auto group"
             >
                <Play className="w-3.5 h-3.5 fill-current text-[#0A0A0A] group-hover:scale-110 transition-transform duration-200 shrink-0" />
                <span className="tracking-wide">SEE THE AUTOMATION</span>

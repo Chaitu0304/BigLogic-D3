@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { Star, ShieldCheck, Quote } from "lucide-react";
 import { ScrollReveal } from "../ui/ScrollReveal";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { BlueprintHeading } from "../ui/BlueprintHeading";
 
 export const Testimonials = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -71,18 +72,13 @@ export const Testimonials = () => {
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         
         {/* Header */}
-        <ScrollReveal direction="up" delay={100} className="max-w-4xl text-left mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/5 border border-black/10 text-xs font-bold text-[#0A0A0A] tracking-wide mb-6">
-            <span>CLIENT EVIDENCE BOARD</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-black mb-6 leading-[1.08] tracking-tight font-display-landeros text-[#0A0A0A]">
-            Bold Claims. <br />
-            Backed By Specific Proof.
-          </h2>
-          <p className="text-lg md:text-xl font-semibold text-[#6B6B6B] max-w-2xl leading-relaxed">
-            We don't deal in vague promises. Here is the exact data and direct feedback from active restoration owners operating commercial and residential operations.
-          </p>
-        </ScrollReveal>
+        <BlueprintHeading
+          badge={<span>CLIENT EVIDENCE BOARD</span>}
+          title="Bold Claims. Backed By Specific Proof."
+          subtitle="We don't deal in vague promises. Here is the exact data and direct feedback from active restoration owners operating commercial and residential operations."
+          align="left"
+          className="mb-20 max-w-4xl text-left"
+        />
 
         {/* Testimonials Infinite Marquee */}
         <ScrollReveal direction="up" delay={150} className="w-full">

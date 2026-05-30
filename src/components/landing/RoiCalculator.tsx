@@ -3,6 +3,7 @@ import { Calculator, ArrowRight, TrendingUp, HelpCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { ScrollReveal } from "../ui/ScrollReveal";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { BlueprintHeading } from "@/components/ui/BlueprintHeading";
 
 export const RoiCalculator = () => {
   const navigate = useNavigate();
@@ -34,20 +35,13 @@ export const RoiCalculator = () => {
  
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         
-        {/* Header */}
-        <ScrollReveal direction="up" delay={100} className="max-w-4xl text-left mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F8F8F8] border border-black/10 text-xs font-bold text-[#0A0A0A] tracking-wide mb-6">
-            <Calculator className="w-4 h-4 text-[#6B6B6B]" />
-            <span>THE RESTORATION ROI MATH</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-black mb-6 leading-[1.08] tracking-tight font-display-landeros text-[#0A0A0A]">
-            Don't Trust Our Claims. <br />
-            Calculate Your Exact ROI.
-          </h2>
-          <p className="text-lg md:text-xl font-semibold text-[#6B6B6B] max-w-2xl leading-relaxed">
-            Slide the bars below to match your restoration business's monthly estimate volume and average job size. We show you the exact hours and capital unlocked.
-          </p>
-        </ScrollReveal>
+        <BlueprintHeading
+          badge={<><Calculator className="w-4 h-4 text-[#6B6B6B] shrink-0" /><span>THE RESTORATION ROI MATH</span></>}
+          title="DON'T TRUST OUR CLAIMS. CALCULATE YOUR EXACT ROI."
+          subtitle="Slide the bars below to match your restoration business's monthly estimate volume and average job size. We show you the exact hours and capital unlocked."
+          align="left"
+          className="mb-16 max-w-4xl text-left"
+        />
  
         {/* Calculator layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-7xl mx-auto items-stretch">

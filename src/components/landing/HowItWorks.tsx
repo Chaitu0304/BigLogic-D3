@@ -3,6 +3,7 @@ import { Upload, Cpu, DollarSign, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { ScrollReveal, ScrollRevealChild } from "../ui/ScrollReveal";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { BlueprintHeading } from "@/components/ui/BlueprintHeading";
 
 export const HowItWorks = () => {
   const navigate = useNavigate();
@@ -48,19 +49,13 @@ export const HowItWorks = () => {
  
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         
-        {/* Header */}
-        <ScrollReveal direction="up" delay={100} className="max-w-4xl text-left mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F0F0F0] border border-black/10 text-xs font-bold text-[#0A0A0A] tracking-wide mb-6">
-            <span>ZERO COMPLEXITY</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-black mb-6 leading-[1.08] tracking-tight font-display-landeros text-[#0A0A0A]">
-            From PDF Upload To <br />
-            Approved Lender Draws. In 3 Steps.
-          </h2>
-          <p className="text-lg md:text-xl font-semibold text-[#6B6B6B] max-w-2xl leading-relaxed">
-            No long training programs. No complicated configurations. Just drop your file, watch the agents extract the details, and cash out draws immediately.
-          </p>
-        </ScrollReveal>
+        <BlueprintHeading
+          badge={<span>ZERO COMPLEXITY</span>}
+          title="FROM PDF UPLOAD TO APPROVED LENDER DRAWS. IN 3 STEPS."
+          subtitle="No long training programs. No complicated configurations. Just drop your file, watch the agents extract the details, and cash out draws immediately."
+          align="left"
+          className="mb-20 max-w-4xl text-left"
+        />
  
         {/* Timeline Grid */}
         <ScrollReveal stagger={true} className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto relative">

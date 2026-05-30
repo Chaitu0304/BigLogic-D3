@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
+import { BlueprintHeading } from '../ui/BlueprintHeading';
 
 export const Faq = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -49,20 +50,13 @@ export const Faq = () => {
           
           {/* Left Column (5 cols) */}
           <div className="lg:col-span-5 text-left lg:sticky lg:top-32">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/5 border border-black/10 text-xs font-bold text-[#0A0A0A] tracking-wide mb-6">
-              <HelpCircle className="w-4 h-4 text-[#0A0A0A]" />
-              <span>OBJECTION REBUTTALS</span>
-            </div>
-            
-            <h2 className="text-4xl md:text-5xl font-black mb-6 leading-[1.08] tracking-tight font-display-landeros text-[#0A0A0A]">
-              Frequently <br />
-              Asked <br />
-              <span className="text-[#6B6B6B]">Questions.</span>
-            </h2>
-            
-            <p className="text-lg font-medium text-[#6B6B6B] leading-relaxed max-w-sm">
-              Everything you need to know to replace administrative copy-paste overhead with automated bank draws.
-            </p>
+            <BlueprintHeading
+              badge={<><HelpCircle className="w-3.5 h-3.5" /><span>OBJECTION REBUTTALS</span></>}
+              title="Frequently Asked Questions."
+              subtitle="Everything you need to know to replace administrative copy-paste overhead with automated bank draws."
+              align="left"
+              className="max-w-sm text-left"
+            />
           </div>
 
           {/* Right Column - Accordion (7 cols) */}

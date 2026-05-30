@@ -3,6 +3,7 @@ import { Check, Zap } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { ScrollReveal } from "../ui/ScrollReveal";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { BlueprintHeading } from "../ui/BlueprintHeading";
 
 export const GrandSlamOffer = () => {
   const navigate = useNavigate();
@@ -22,6 +23,14 @@ export const GrandSlamOffer = () => {
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         
+        <BlueprintHeading
+          badge={<><Zap className="w-3.5 h-3.5 animate-pulse" /><span>THE VALUE STACK</span></>}
+          title="Our Grand Slam Offer. Test the Platform 100% Free."
+          subtitle="Try the entire system for a test drive. Upload real estimates, generate real Excel sheets, and audit real insurance files with zero risk."
+          align="left"
+          className="mb-16 max-w-4xl text-left"
+        />
+
         {/* Hormozi Grand Slam Value Stack Box */}
         <ScrollReveal direction="up" delay={150} className="w-full">
           <div className="max-w-4xl mx-auto bg-white border border-black/8 rounded-3xl p-8 md:p-12 shadow-landeros relative text-left hover-premium-card z-10 overflow-visible !overflow-visible">

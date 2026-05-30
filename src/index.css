@@ -137,13 +137,50 @@
   }
 }
 
-/* Global scrollbar hide */
-* {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+/* Global scrollbar styling (tactile charcoal/gold) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
-*::-webkit-scrollbar {
-  display: none;
+::-webkit-scrollbar-track {
+  background: #FCFBFE; /* Pearl white background matching index.tsx */
+}
+.dark ::-webkit-scrollbar-track,
+[class*="bg-[#0A0A0A]"] ::-webkit-scrollbar-track,
+[class*="bg-[#060606]"] ::-webkit-scrollbar-track {
+  background: #0A0A0A; /* Dark matching footer/CTA */
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(10, 10, 10, 0.15); /* Sleek translucent charcoal */
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(10, 10, 10, 0.35); /* Darker on hover */
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+.dark ::-webkit-scrollbar-thumb,
+[class*="bg-[#0A0A0A]"] ::-webkit-scrollbar-thumb,
+[class*="bg-[#060606]"] ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12); /* White translucent for dark sections */
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+.dark ::-webkit-scrollbar-thumb:hover,
+[class*="bg-[#0A0A0A]"] ::-webkit-scrollbar-thumb:hover,
+[class*="bg-[#060606]"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* Enable scrollbar widths for standard browsers */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(10, 10, 10, 0.15) transparent;
 }
 
 /* ==========================================================================
@@ -292,48 +329,60 @@
   border: 1px solid rgba(0, 0, 0, 0.08) !important;
 }
 
-/* Premium LanderOS Buttons — Light Mode */
+/* Premium LanderOS Buttons — Glassmorphic Dark Mode with Color Fade */
 .theme-landeros .btn-landeros-primary {
   font-family: 'Space Grotesk', sans-serif !important;
-  background-color: #0A0A0A !important;
+  background: linear-gradient(135deg, rgba(18, 18, 18, 0.95) 0%, rgba(32, 32, 35, 0.9) 55%, rgba(85, 85, 90, 0.8) 100%) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
   color: #FFFFFF !important;
   font-weight: 700 !important;
   border-radius: 9999px !important;
-  letter-spacing: 0.05em !important;
+  letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
-  box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.2) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15) !important;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  border: 1px solid #0A0A0A !important;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .theme-landeros .btn-landeros-primary:hover {
   transform: translateY(-2px) scale(1.02) !important;
-  background-color: #2A2A2A !important;
-  border-color: #2A2A2A !important;
-  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.25), 0 0 20px 2px rgba(0, 0, 0, 0.08) !important;
+  background: linear-gradient(135deg, rgba(32, 32, 35, 0.98) 0%, rgba(65, 65, 70, 0.95) 60%, rgba(120, 120, 128, 0.85) 100%) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 15px 40px -5px rgba(0, 0, 0, 0.35), 0 0 15px 3px rgba(255, 255, 255, 0.15), inset 0 1px 2px rgba(255, 255, 255, 0.25) !important;
 }
 
 .theme-landeros .btn-landeros-primary:active {
   transform: translateY(0) scale(0.98) !important;
 }
 
+/* Premium LanderOS Buttons — Glassmorphic Light Mode with Color Fade */
 .theme-landeros .btn-landeros-secondary {
   font-family: 'Space Grotesk', sans-serif !important;
-  background-color: transparent !important;
+  background: linear-gradient(135deg, rgba(240, 240, 243, 0.9) 0%, rgba(200, 200, 205, 0.75) 50%, rgba(140, 140, 145, 0.6) 100%) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
   color: #0A0A0A !important;
   font-weight: 700 !important;
   border-radius: 9999px !important;
-  letter-spacing: 0.05em !important;
+  letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
-  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+  border: 1.5px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.6) !important;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
 .theme-landeros .btn-landeros-secondary:hover {
   transform: translateY(-2px) scale(1.02) !important;
-  background-color: rgba(0, 0, 0, 0.04) !important;
-  border-color: rgba(0, 0, 0, 0.35) !important;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.06) !important;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(220, 220, 225, 0.85) 50%, rgba(170, 170, 175, 0.7) 100%) !important;
+  border-color: rgba(0, 0, 0, 0.18) !important;
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.75) !important;
 }
 
 .theme-landeros .btn-landeros-secondary:active {
@@ -442,4 +491,44 @@
   stroke-dashoffset: 300;
   animation: drawShield 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+/* Custom premium breathing pencil/chalk glow animation */
+@keyframes pulseGlow {
+  0%, 100% {
+    filter: invert(1) drop-shadow(0 0 6px rgba(255, 255, 255, 0.25)) drop-shadow(0 0 2px rgba(255, 255, 255, 0.1));
+    opacity: 0.05;
+  }
+  50% {
+    filter: invert(1) drop-shadow(0 0 16px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 4px rgba(255, 255, 255, 0.3));
+    opacity: 0.11;
+  }
+}
+.animate-pulse-glow {
+  animation: pulseGlow 7s ease-in-out infinite;
+}
+
+/* Custom animated SVG circuit flow paths */
+@keyframes circuitFlowLeft {
+  0% {
+    stroke-dashoffset: 80;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes circuitFlowRight {
+  0% {
+    stroke-dashoffset: -80;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+.animate-circuit-flow-left {
+  animation: circuitFlowLeft 2.5s linear infinite;
+}
+.animate-circuit-flow-right {
+  animation: circuitFlowRight 2.5s linear infinite;
+}
+
 

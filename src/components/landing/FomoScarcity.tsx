@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { TrendingDown, AlertTriangle, Clock, ArrowRight, ShieldAlert, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { ScrollReveal } from "../ui/ScrollReveal";
+import { BlueprintHeading } from "../ui/BlueprintHeading";
 
 export const FomoScarcity = () => {
   const navigate = useNavigate();
@@ -53,19 +54,13 @@ export const FomoScarcity = () => {
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         
         {/* Section Header */}
-        <ScrollReveal direction="up" delay={100} className="max-w-4xl text-left mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-black/10 text-xs font-bold text-[#0A0A0A] tracking-wide mb-6 shadow-sm">
-            <ShieldAlert className="w-4 h-4 text-[#0A0A0A]" />
-            <span>THE COST OF INACTION</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-black mb-6 leading-[1.08] tracking-tight font-display-landeros text-[#0A0A0A]">
-            The Cost of Stalling. <br />
-            What Inaction Drains From Your Firm.
-          </h2>
-          <p className="text-lg md:text-xl font-medium text-[#6B6B6B] max-w-2xl leading-relaxed">
-            Every week your team spends manually copying Xactimate data into spreadsheets is cash leaking from your margins and capital choked in banker review. Stop waiting.
-          </p>
-        </ScrollReveal>
+        <BlueprintHeading
+          badge={<><ShieldAlert className="w-3.5 h-3.5" /><span>THE COST OF INACTION</span></>}
+          title="The Cost of Stalling. What Inaction Drains From Your Firm."
+          subtitle="Every week your team spends manually copying Xactimate data into spreadsheets is cash leaking from your margins and capital choked in banker review. Stop waiting."
+          align="left"
+          className="mb-20 max-w-4xl text-left"
+        />
 
         {/* Core FOMO Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-7xl mx-auto items-stretch">

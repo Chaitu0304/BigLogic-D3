@@ -3,6 +3,7 @@ import { Check, X, ShieldAlert, Zap, HeartHandshake, ArrowRight } from "lucide-r
 import { useNavigate } from "react-router-dom";
 import { ScrollReveal } from "../ui/ScrollReveal";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { BlueprintHeading } from "../ui/BlueprintHeading";
 
 export const OfferTransformation = () => {
   const navigate = useNavigate();
@@ -44,21 +45,13 @@ export const OfferTransformation = () => {
  
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         
-        {/* Section Header: The Core Emotional Transformation */}
-        <ScrollReveal direction="up" delay={100} className="max-w-5xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-black/10 text-xs font-bold text-[#0A0A0A] tracking-wide mb-6 shadow-sm">
-            <Zap className="w-3.5 h-3.5 text-[#0A0A0A] fill-black/5" />
-            <span>THE OPERATIONAL RECOVERY MODEL</span>
-          </div>
-          
-          <h2 className="text-3xl md:text-5xl font-black leading-[1.1] tracking-tight text-[#0A0A0A] mb-8 font-display-landeros max-w-4xl mx-auto">
-            “From chaos, paperwork, delays, and expensive office overhead <span className="text-neutral-400 font-light">&rarr;</span> to one calm operator controlling the entire reconstruction business from a single intelligent platform.”
-          </h2>
-          
-          <p className="text-base md:text-lg font-semibold text-[#3A3A3A] max-w-2xl mx-auto leading-relaxed">
-            Restoration business owners are forced to hire armies of office staff just to copy-paste Xactimate data, draft contracts, audit insurer rules, and request lender payouts. We replace that administrative friction with automated software.
-          </p>
-        </ScrollReveal>
+        <BlueprintHeading
+          badge={<><Zap className="w-3.5 h-3.5 text-[#0A0A0A] fill-black/5" /><span>THE OPERATIONAL RECOVERY MODEL</span></>}
+          title="FROM CHAOS, DELAYS, AND OFFICE OVERHEAD TO ONE CALM OPERATOR."
+          subtitle="Restoration business owners are forced to hire armies of office staff just to copy-paste Xactimate data, draft contracts, audit insurer rules, and request lender payouts. We replace that administrative friction with automated software."
+          align="center"
+          className="mb-16 max-w-4xl mx-auto text-center"
+        />
  
         {/* Interactive Before/After Reveal Slider */}
         <ScrollReveal direction="up" delay={150} className="mb-20">

@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { Check, HelpCircle, Zap, ShieldCheck, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { BlueprintHeading } from "@/components/ui/BlueprintHeading";
 
 export const Pricing = () => {
   const navigate = useNavigate();
@@ -58,20 +59,13 @@ export const Pricing = () => {
     <section ref={sectionRef} id="pricing" className="py-24 md:py-32 bg-premium-luxury-gradient relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
         
-        {/* Section badge tag */}
-        <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/5 border border-black/10 font-tech-landeros text-xs font-black uppercase tracking-widest text-[#0A0A0A] mb-6">
-          <Zap className="w-3.5 h-3.5 fill-[#0A0A0A]/20" /> PRICING PLANS
-        </div>
-
-        {/* Section Heading */}
-        <h2 className="font-display-landeros text-4xl md:text-6xl font-black text-[#0A0A0A] uppercase tracking-tighter leading-none mb-6">
-          FAIR & ETHICAL <span className="text-[#6B6B6B]">INVESTMENT.</span>
-        </h2>
-        
-        {/* Section Subheading */}
-        <p className="font-bold text-sm text-[#6B6B6B] uppercase tracking-widest max-w-xl mx-auto mb-12">
-          Pick your tier. Zero setup fees. 100% money-back guarantee.
-        </p>
+        <BlueprintHeading
+          badge={<><Zap className="w-3.5 h-3.5 fill-[#0A0A0A]/20" /> PRICING PLANS</>}
+          title="FAIR & ETHICAL INVESTMENT."
+          subtitle="Pick your tier. Zero setup fees. 100% money-back guarantee."
+          align="center"
+          className="mb-16"
+        />
 
         {/* Billing Toggle capsule */}
         <div className="inline-flex items-center gap-2 p-1.5 bg-[#F0F0F0] border border-black/10 rounded-full mb-16 shadow-inner">
@@ -214,8 +208,8 @@ export const Pricing = () => {
                     onClick={() => navigate("/signup")}
                     className={`w-full h-14 text-xs font-extrabold uppercase tracking-widest flex items-center justify-center gap-2 group/btn relative overflow-hidden transition-all duration-300 border ${
                       plan.popular
-                        ? "bg-white text-[#0A0A0A] hover:bg-white/90 border-transparent"
-                        : "bg-[#0A0A0A] text-white hover:bg-[#2A2A2A] border-transparent"
+                        ? "btn-landeros-secondary"
+                        : "btn-landeros-primary"
                     }`}
                   >
                     <span>{plan.cta}</span>

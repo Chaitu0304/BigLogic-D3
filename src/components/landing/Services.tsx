@@ -11,6 +11,7 @@ import {
   Mic
 } from "lucide-react";
 import { ScrollReveal, ScrollRevealChild } from "../ui/ScrollReveal";
+import { BlueprintHeading } from "@/components/ui/BlueprintHeading";
 
 export const Services = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
@@ -100,22 +101,13 @@ export const Services = () => {
  
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         
-        {/* Section Header */}
-        <ScrollReveal direction="up" delay={100} className="max-w-4xl mb-28 text-left">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F8F8F8] border border-black/10 text-xs font-bold text-[#0A0A0A] tracking-wide mb-6">
-            <TrendingUp className="w-4 h-4 text-[#6B6B6B]" />
-            <span>HOW WE GENERATE A $4,000/MONTH VALUE FOR CONTRACTORS</span>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl font-black mb-6 leading-[1.08] tracking-tight font-display-landeros text-[#0A0A0A]">
-            Five Dedicated AI Agents. <br />
-            Working 24/7  Inside Your Business.
-          </h2>
-          
-          <p className="text-lg md:text-xl font-semibold text-[#6B6B6B] max-w-3xl leading-relaxed">
-            Stop paying skilled estimators to do manual copy-paste administrative work. Stop waiting weeks for bank draw inspections. Deploy specific, trained agents in seconds with zero setup.
-          </p>
-        </ScrollReveal>
+        <BlueprintHeading
+          badge={<><TrendingUp className="w-4 h-4 text-[#6B6B6B] shrink-0" /><span>HOW WE GENERATE A $4,000/MONTH VALUE FOR CONTRACTORS</span></>}
+          title="FIVE DEDICATED AI AGENTS. WORKING 24/7 INSIDE YOUR BUSINESS."
+          subtitle="Stop paying skilled estimators to do manual copy-paste administrative work. Stop waiting weeks for bank draw inspections. Deploy specific, trained agents in seconds with zero setup."
+          align="left"
+          className="mb-28 max-w-4xl text-left"
+        />
  
         {/* Premium Agents Grid (Narrower max-w-5xl decreases horizontal card width) */}
         <ScrollReveal stagger={true} className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
