@@ -44,7 +44,7 @@ export const CTA = () => {
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         
         {/* Main Grand Slam Container Card */}
-        <div className="bg-[#121212] text-white rounded-[32px] p-8 md:p-14 shadow-premium-tactile relative overflow-hidden border border-white/10 mb-16">
+        <div className="bg-[#121212] text-white rounded-[32px] p-4 sm:p-8 md:p-14 shadow-premium-tactile relative overflow-hidden border border-white/10 mb-16">
           
           {/* Glass glows inside the card */}
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-tr from-white/10 to-white/5 rounded-full blur-[80px] pointer-events-none" />
@@ -223,7 +223,7 @@ export const CTA = () => {
             </div>
 
             {/* Right Column - Premium Glass Receipt Invoice (5 cols) */}
-            <div className="lg:col-span-5 bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[28px] shadow-2xl p-6 md:p-8 flex flex-col justify-between text-left hover-premium-card z-10 overflow-hidden relative group">
+            <div className="lg:col-span-5 bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[28px] shadow-2xl p-4 sm:p-6 md:p-8 flex flex-col justify-between text-left hover-premium-card z-10 overflow-hidden relative group">
               {/* Approved stamp watermark effect */}
               <div className="absolute top-4 right-4 border-2 border-emerald-500/30 text-emerald-400/50 text-[9px] font-bold uppercase px-3 py-1 rounded-lg rotate-[15deg] tracking-widest pointer-events-none select-none font-tech-landeros shadow-[0_0_10px_rgba(16,185,129,0.05)] bg-[#121212]/30">
                 APPROVED PROPOSAL
@@ -338,7 +338,7 @@ export const CTA = () => {
       {/* Background Pencil Sketches surrounding the content (Inverted Glowing Chalk blackboard style) */}
       <motion.div
         style={{ y: ySketch, filter: "invert(1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.25))" }}
-        className="absolute top-[10%] left-[-150px] w-[350px] h-[350px] pointer-events-none z-0 opacity-[0.05] overflow-hidden"
+        className="absolute top-[10%] left-[-150px] w-[350px] h-[350px] pointer-events-none z-0 opacity-[0.05] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_house_framing.png"
@@ -349,7 +349,7 @@ export const CTA = () => {
 
       <motion.div
         style={{ y: ySketch, filter: "invert(1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.25))" }}
-        className="absolute top-[5%] right-[-150px] w-[350px] h-[350px] pointer-events-none z-0 opacity-[0.05] overflow-hidden"
+        className="absolute top-[5%] right-[-150px] w-[350px] h-[350px] pointer-events-none z-0 opacity-[0.05] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_blueprint_layout.png"
@@ -360,7 +360,7 @@ export const CTA = () => {
 
       <motion.div
         style={{ y: ySketch, filter: "invert(1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.25))" }}
-        className="absolute bottom-[35%] left-[-150px] w-[350px] h-[350px] pointer-events-none z-0 opacity-[0.05] overflow-hidden"
+        className="absolute bottom-[35%] left-[-150px] w-[350px] h-[350px] pointer-events-none z-0 opacity-[0.05] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_construction_truck.png"
@@ -371,7 +371,7 @@ export const CTA = () => {
 
       <motion.div
         style={{ y: ySketch, filter: "invert(1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.25))" }}
-        className="absolute bottom-[25%] right-[-150px] w-[350px] h-[350px] pointer-events-none z-0 opacity-[0.05] overflow-hidden"
+        className="absolute bottom-[25%] right-[-150px] w-[350px] h-[350px] pointer-events-none z-0 opacity-[0.05] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_paint_roller.png"

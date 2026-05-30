@@ -149,7 +149,7 @@ export const WhoItsFor = () => {
       {/* Background Pencil Sketches surrounding the content closer to content, larger, and more opaque */}
       <motion.div
         style={{ y: ySketch }}
-        className="absolute top-[10%] left-[-80px] lg:left-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute top-[10%] left-[-80px] lg:left-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_scaffolding_structure.png"
@@ -160,7 +160,7 @@ export const WhoItsFor = () => {
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute top-[5%] right-[-80px] lg:right-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute top-[5%] right-[-80px] lg:right-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_construction_truck.png"
@@ -171,7 +171,7 @@ export const WhoItsFor = () => {
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute bottom-[15%] left-[-80px] lg:left-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute bottom-[15%] left-[-80px] lg:left-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_toolbox_wrenches.png"
@@ -182,7 +182,7 @@ export const WhoItsFor = () => {
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute bottom-[5%] right-[-80px] lg:right-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute bottom-[5%] right-[-80px] lg:right-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_hardhat_hammer.png"

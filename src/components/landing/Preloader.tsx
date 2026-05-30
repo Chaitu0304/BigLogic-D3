@@ -162,8 +162,21 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
       {/* Subtle Cinematic Vignette Overlay (Dark edges focused to center) */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_30%,_rgba(6,6,6,0.92)_100%)] pointer-events-none z-15" />
 
-      {/* 2. CENTERED CINEMATIC VIDEO (Crisp limit protecting resolution) */}
+      {/* 2. CENTERED CINEMATIC VIDEO + MOBILE LOADING RING & LOGO */}
       <div className="absolute inset-0 w-full h-full z-10 overflow-hidden flex items-center justify-center pointer-events-none">
+        
+        {/* Glowing Golden Ring Loader for mobile viewports */}
+        <div className="absolute w-24 h-24 rounded-full border-2 border-amber-500/10 border-t-amber-400 animate-spin z-10 md:hidden shadow-[0_0_15px_rgba(245,158,11,0.2)]" />
+        
+        {/* Pulsing Brand Logo behind the loading ring on mobile */}
+        <motion.img
+          src="/logo-icon.png"
+          alt="Loading..."
+          animate={{ scale: [0.96, 1.04, 0.96], opacity: [0.4, 0.75, 0.4] }}
+          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute w-12 h-12 object-contain filter brightness-125 z-10 md:hidden"
+        />
+
         <video
           src="/vid_mp_ (online-video-cutter.com).mp4"
           autoPlay

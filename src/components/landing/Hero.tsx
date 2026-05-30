@@ -158,7 +158,7 @@ export const Hero = () => {
       {/* Retained Pencil Sketches beside the dashboard at z-10 behind the dashboard container */}
       <motion.div
         style={{ y: ySketch }}
-        className="absolute bottom-[20%] left-[-80px] lg:left-[-120px] w-[380px] h-[380px] lg:w-[600px] lg:h-[600px] pointer-events-none z-10 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute bottom-[20%] left-[-80px] lg:left-[-120px] w-[380px] h-[380px] lg:w-[600px] lg:h-[600px] pointer-events-none z-10 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_calculator_ruler.png"
@@ -169,7 +169,7 @@ export const Hero = () => {
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute bottom-[17%] right-[-80px] lg:right-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-10 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute bottom-[17%] right-[-80px] lg:right-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-10 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_tape_measure.png"
@@ -181,7 +181,7 @@ export const Hero = () => {
 
       
       <div className="container relative z-10 mx-auto px-4 max-w-7xl">
-        <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
+        <div className="flex flex-col items-center text-center max-w-5xl mx-auto relative">
           
           {/* Centered Attention Badge */}
           <motion.div 
@@ -195,34 +195,50 @@ export const Hero = () => {
           </motion.div>
 
           {/* Centered Satoshi Bold Headline */}
-          <motion.h1 
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: {},
-              visible: {
-                transition: {
-                  staggerChildren: 0.08,
-                  delayChildren: 0.15,
+          <div className="relative w-full flex justify-center z-10">
+            {/* Mobile Grey Spotlight - Centered directly behind the H1 heading to elevate contrast and premium feel */}
+            <motion.div 
+              animate={{ 
+                opacity: [0.75, 1, 0.75],
+                scale: [0.95, 1.05, 0.95]
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[330px] h-[230px] bg-[radial-gradient(circle_at_center,_rgba(120,120,120,0.22)_0%,_transparent_75%)] blur-[30px] pointer-events-none z-0 md:hidden" 
+            />
+
+            <motion.h1 
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: {
+                    staggerChildren: 0.08,
+                    delayChildren: 0.15,
+                  }
                 }
-              }
-            }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] font-black leading-[1.05] tracking-tight mb-8 font-display-landeros text-[#0A0A0A] max-w-4xl flex flex-wrap justify-center gap-x-3.5 gap-y-1.5"
-          >
-            {["YOU", "DON’T", "NEED", "MORE", "OFFICE", "STAFF."].map((word, idx) => (
-              <span key={idx} className="overflow-hidden inline-block py-1 -my-1">
-                <motion.span
-                  variants={{
-                    hidden: { y: "110%" },
-                    visible: { y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
-                  }}
-                  className={`inline-block ${word === "OFFICE" || word === "STAFF." ? "underline decoration-black/30" : ""}`}
-                >
-                  {word}
-                </motion.span>
-              </span>
-            ))}
-          </motion.h1>
+              }}
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] font-black leading-[1.05] tracking-tight mb-8 font-display-landeros text-[#0A0A0A] max-w-4xl flex flex-wrap justify-center gap-x-3.5 gap-y-1.5 relative z-10"
+            >
+              {["YOU", "DON’T", "NEED", "MORE", "OFFICE", "STAFF."].map((word, idx) => (
+                <span key={idx} className="overflow-hidden inline-block py-1 -my-1">
+                  <motion.span
+                    variants={{
+                      hidden: { y: "110%" },
+                      visible: { y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+                    }}
+                    className={`inline-block ${word === "OFFICE" || word === "STAFF." ? "underline decoration-black/30" : ""}`}
+                  >
+                    {word}
+                  </motion.span>
+                </span>
+              ))}
+            </motion.h1>
+          </div>
 
           {/* Centered Subheading */}
           <motion.p 
@@ -322,40 +338,56 @@ export const Hero = () => {
               </div>
             </div>
 
-            {/* Mobile / Tablet Responsive Staggered Grid */}
-            <div className="grid grid-cols-2 gap-x-4 gap-y-12 w-full max-w-sm md:hidden overflow-visible px-4 my-6">
-              <Cube3D
-                icon={FileText}
-                label="1. PDF Scraping"
-                sublabel="Extract materials in 45s"
-                delay={0}
-                isActive={activeTab === 0}
-                onClick={() => handleCubeClick(0)}
-              />
-              <Cube3D
-                icon={BarChart3}
-                label="2. Live Dashboards"
-                sublabel="Real-time draw analytics"
-                delay={0.4}
-                isActive={activeTab === 1}
-                onClick={() => handleCubeClick(1)}
-              />
-              <Cube3D
-                icon={ListTodo}
-                label="3. Managing Tasks"
-                sublabel="AI automated workflows"
-                delay={0.8}
-                isActive={activeTab === 2}
-                onClick={() => handleCubeClick(2)}
-              />
-              <Cube3D
-                icon={Shield}
-                label="4. Automating"
-                sublabel="Calm operator pipelines"
-                delay={1.2}
-                isActive={activeTab === 3}
-                onClick={() => handleCubeClick(3)}
-              />
+            {/* Mobile / Tablet Diamond Grid - Perfectly mimicking desktop view in proportions */}
+            <div className="relative w-full max-w-[310px] sm:max-w-[350px] h-[230px] sm:h-[270px] md:hidden select-none overflow-visible my-10 mx-auto">
+              
+              {/* Back / Top Cube: PDF SCRAPING */}
+              <div className="absolute top-[0%] left-1/2 -translate-x-1/2">
+                <Cube3D
+                  icon={FileText}
+                  label="1. PDF Scraping"
+                  sublabel="Extract materials in 45s"
+                  delay={0}
+                  isActive={activeTab === 0}
+                  onClick={() => handleCubeClick(0)}
+                />
+              </div>
+
+              {/* Left Cube: CREATING DASHBOARDS */}
+              <div className="absolute top-[28%] left-[-15px] sm:left-[0%]">
+                <Cube3D
+                  icon={BarChart3}
+                  label="2. Live Dashboards"
+                  sublabel="Real-time draw analytics"
+                  delay={0.4}
+                  isActive={activeTab === 1}
+                  onClick={() => handleCubeClick(1)}
+                />
+              </div>
+
+              {/* Right Cube: MANAGING TASKS */}
+              <div className="absolute top-[28%] right-[-15px] sm:right-[0%]">
+                <Cube3D
+                  icon={ListTodo}
+                  label="3. Managing Tasks"
+                  sublabel="AI automated workflows"
+                  delay={0.8}
+                  isActive={activeTab === 2}
+                  onClick={() => handleCubeClick(2)}
+                />
+              </div>
+
+              {/* Front / Bottom Cube: AUTOMATING */}
+              <div className="absolute bottom-[0%] left-1/2 -translate-x-1/2">
+                <Cube3D
+                  icon={Shield}
+                  label="4. Automating"
+                  sublabel="Calm operator pipelines"
+                  delay={1.2}
+                  isActive={activeTab === 3}
+                  onClick={() => handleCubeClick(3)}
+                />
+              </div>
             </div>
             
           </div>
@@ -408,7 +440,7 @@ export const Hero = () => {
                   BIGlogic System Core v2.4 (Active)
                 </span>
               </div>
-              <div className="flex items-center gap-1.5 bg-emerald-50 border border-emerald-500/15 rounded-full px-3 py-1.5 text-[9px] font-bold text-emerald-700 uppercase font-tech-landeros shadow-sm">
+              <div className="hidden sm:flex items-center gap-1.5 bg-emerald-50 border border-emerald-500/15 rounded-full px-3 py-1.5 text-[9px] font-bold text-emerald-700 uppercase font-tech-landeros shadow-sm">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
                 Audited & Secured
               </div>
@@ -448,7 +480,7 @@ export const Hero = () => {
             </div>
 
             {/* Main Interactive Screen Canvas */}
-            <div className="p-8 md:p-12 min-h-[380px] md:min-h-[420px] bg-gradient-to-b from-white to-[#F5F5F3] relative flex flex-col justify-center overflow-hidden border-t border-black/5 bg-grid-premium">
+            <div className="p-4 md:p-12 min-h-[380px] md:min-h-[420px] bg-gradient-to-b from-white to-[#F5F5F3] relative flex flex-col justify-center overflow-hidden border-t border-black/5 bg-grid-premium">
               <AnimatePresence mode="wait">
                 
                 {/* 1. PDF SCRAPING STATE */}
@@ -543,12 +575,12 @@ export const Hero = () => {
                     className="flex flex-col w-full"
                   >
                     {/* Header Details */}
-                    <div className="flex justify-between items-center mb-6 font-tech-landeros">
+                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6 font-tech-landeros text-left">
                       <div>
                         <h4 className="text-sm font-bold text-[#0A0A0A] tracking-tight">LIVE PROJECT DRAW ANALYTICS</h4>
-                        <p className="text-[10px] text-[#6B6B6B] font-semibold mt-0.5">Calculated automatically from extracted PDF coordinates.</p>
+                        <p className="text-[10px] text-[#6B6B6B] font-semibold mt-0.5 hidden sm:block">Calculated automatically from extracted PDF coordinates.</p>
                       </div>
-                      <div className="text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-500/20 px-3 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
+                      <div className="text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-500/20 px-3 py-1.5 rounded-full uppercase tracking-wider shadow-sm shrink-0">
                         Compliance Score: 99.8%
                       </div>
                     </div>
@@ -696,8 +728,8 @@ export const Hero = () => {
                     transition={{ duration: 0.4 }}
                     className="flex flex-col items-center justify-center w-full"
                   >
-                    {/* The Center Operator Pulse visual */}
-                    <div className="relative w-64 h-64 flex items-center justify-center mb-6">
+                    {/* The Center Operator Pulse visual - responsive scaled for mobile */}
+                    <div className="relative w-64 h-64 flex items-center justify-center mb-6 scale-[0.82] sm:scale-100 transition-transform duration-300">
                       
                       {/* Concentric glowing background circles */}
                       <motion.div 

@@ -170,7 +170,7 @@ export const FomoScarcity = () => {
       {/* Background Pencil Sketches surrounding the content */}
       <motion.div
         style={{ y: ySketch }}
-        className="absolute top-[10%] left-[-150px] w-[350px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute top-[10%] left-[-150px] w-[350px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_clipboard_contract.png"
@@ -181,7 +181,7 @@ export const FomoScarcity = () => {
 
       <motion.div
         style={{ y: ySketch, rotate: -30 }}
-        className="absolute top-[5%] right-[-120px] lg:right-[90px] w-[450px] h-[450px] lg:w-[550px] lg:h-[550px] pointer-events-none z-0 mix-blend-multiply opacity-[0.16] overflow-hidden"
+        className="absolute top-[5%] right-[-120px] lg:right-[90px] w-[450px] h-[450px] lg:w-[550px] lg:h-[550px] pointer-events-none z-0 mix-blend-multiply opacity-[0.16] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_hourglass_clock.png"
@@ -192,7 +192,7 @@ export const FomoScarcity = () => {
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute bottom-[5%] left-[-160px] w-[420px] h-[420px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute bottom-[5%] left-[-160px] w-[420px] h-[420px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_construction_truck.png"
@@ -203,7 +203,7 @@ export const FomoScarcity = () => {
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute bottom-[-5%] right-[30px] w-[420px] h-[420px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute bottom-[-5%] right-[30px] w-[420px] h-[420px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_contract_scroll.png"

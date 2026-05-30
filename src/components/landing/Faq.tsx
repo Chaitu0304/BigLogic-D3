@@ -121,7 +121,7 @@ export const Faq = () => {
       {/* Background Pencil Sketches surrounding the content */}
       <motion.div
         style={{ y: ySketch }}
-        className="absolute top-[-5%] left-[-40px] w-[450px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute top-[-5%] left-[-40px] w-[450px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_faq_3d.png"
@@ -132,7 +132,7 @@ export const Faq = () => {
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute top-[-1%] right-[-40px] w-[450px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute top-[-1%] right-[-40px] w-[450px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_faq_book.png"
@@ -143,7 +143,7 @@ export const Faq = () => {
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute bottom-[-3%] left-[-10px] w-[450px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute bottom-[-3%] left-[-10px] w-[450px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_faq_laptop.png"
@@ -154,7 +154,7 @@ export const Faq = () => {
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute bottom-[-5%] right-[-10px] w-[450px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute bottom-[-5%] right-[-10px] w-[450px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_faq_security.png"

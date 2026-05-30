@@ -194,7 +194,7 @@ export const OfferTransformation = () => {
       {/* Background Pencil Sketches surrounding the content closer to the outer corners, larger, and more opaque */}
       <motion.div
         style={{ y: ySketch }}
-        className="absolute top-[2%] left-[-120px] lg:left-[-160px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute top-[2%] left-[-120px] lg:left-[-160px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_clipboard_contract.png"
@@ -205,7 +205,7 @@ export const OfferTransformation = () => {
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute top-[1%] right-[-50px] lg:right-[-90px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute top-[1%] right-[-50px] lg:right-[-90px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_construction_truck.png"
@@ -216,7 +216,7 @@ export const OfferTransformation = () => {
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute bottom-[4%] left-[-120px] lg:left-[-160px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute bottom-[4%] left-[-120px] lg:left-[-160px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_toolbox_wrenches.png"
@@ -227,7 +227,7 @@ export const OfferTransformation = () => {
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute bottom-[2%] right-[-120px] lg:right-[-160px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute bottom-[2%] right-[-120px] lg:right-[-160px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_blueprint_layout.png"

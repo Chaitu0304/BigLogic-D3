@@ -119,7 +119,7 @@ export const GrandSlamOffer = () => {
       {/* Background Pencil Sketches surrounding the content */}
       <motion.div
         style={{ y: ySketch }}
-        className="absolute top-[-3%] left-[-60px] w-[450px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute top-[-7%] left-[-80px] w-[450px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_offer_free.png"
@@ -130,7 +130,7 @@ export const GrandSlamOffer = () => {
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute top-[-5%] right-[-30px] w-[450px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.18] overflow-hidden"
+        className="absolute top-[5%] right-[-30px] w-[450px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.18] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_offer_upload.png"
@@ -141,7 +141,7 @@ export const GrandSlamOffer = () => {
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute bottom-[3%] left-[-10px] w-[450px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute bottom-[3%] left-[-10px] w-[450px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_offer_auditor.png"
@@ -152,7 +152,7 @@ export const GrandSlamOffer = () => {
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute bottom-[3%] right-[-40px] w-[50px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.18] overflow-hidden"
+        className="absolute bottom-[3%] right-[20px] w-[500px] h-[350px] pointer-events-none z-0 mix-blend-multiply opacity-[0.18] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_offer_riskfree.png"

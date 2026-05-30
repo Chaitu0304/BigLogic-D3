@@ -116,11 +116,11 @@ export const Services = () => {
             const isHovered = isDesktop && hoveredCard === index;
             const isLeftCard = index === 0 || index === 3;
             return (
-              <ScrollRevealChild key={index} className={`h-full flex relative overflow-visible ${index === 2 ? "md:col-span-2 max-w-[calc(50%-16px)] mx-auto w-full" : ""}`}>
+              <ScrollRevealChild key={index} className={`h-full flex relative overflow-visible ${index === 2 ? "md:col-span-2 md:max-w-[calc(50%-16px)] mx-auto w-full" : ""}`}>
                 <motion.div 
                   onMouseEnter={() => setHoveredCard(index)}
                   onMouseLeave={() => setHoveredCard(null)}
-                  className="relative z-10 w-full h-[240px] select-none cursor-pointer group rounded-[32px] transition-shadow duration-500 overflow-visible"
+                  className="relative z-10 w-full h-[265px] select-none cursor-pointer group rounded-[32px] transition-shadow duration-500 overflow-visible"
                   animate={isHovered ? {
                     rotateY: isLeftCard ? 4 : -4,
                     rotateX: 2,
@@ -157,6 +157,16 @@ export const Services = () => {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="w-full h-full absolute inset-0 pointer-events-none z-10"
                     >
+                      {/* Premium Blueprint Schematic Watermark (permanently faded & shifted to bottom right on mobile for optimal text readability) */}
+                      <div className="absolute bottom-[-12px] right-[-8px] w-28 h-28 pointer-events-none z-0 opacity-[0.14] mix-blend-multiply md:hidden overflow-hidden select-none">
+                        <img
+                          src={agent.image}
+                          alt={agent.title}
+                          className="w-full h-full object-contain filter grayscale contrast-[1.1] brightness-[1.05]"
+                          style={{ clipPath: "inset(4%)" }}
+                        />
+                      </div>
+
                       {/* Massive Number Stamp shining between the grey shade */}
                       <div className="absolute top-2 right-6 font-display-landeros text-5xl font-extrabold text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.95)] transition-all duration-300">
                         {agent.num}
@@ -386,7 +396,7 @@ export const Services = () => {
       {/* Background Pencil Sketches surrounding the content closer to content, larger, and more opaque */}
       <motion.div
         style={{ y: ySketch }}
-        className="absolute top-[10%] left-[-80px] lg:left-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute top-[10%] left-[-80px] lg:left-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_scaffolding_structure.png"
@@ -404,7 +414,7 @@ export const Services = () => {
           WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)",
           maskImage: "radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)"
         }}
-        className="absolute top-[-3%] right-[-60px] lg:right-[-80px] w-[400px] h-[400px] lg:w-[650px] lg:h-[650px] pointer-events-none z-0 mix-blend-multiply opacity-[0.18] overflow-hidden"
+        className="absolute top-[-3%] right-[-60px] lg:right-[-80px] w-[400px] h-[400px] lg:w-[650px] lg:h-[650px] pointer-events-none z-0 mix-blend-multiply opacity-[0.18] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_laptop_angled.png"

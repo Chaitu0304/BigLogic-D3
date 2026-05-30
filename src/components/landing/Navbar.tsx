@@ -90,16 +90,16 @@ export const Navbar = () => {
             className="flex items-center group shrink-0 select-none"
           >
             {/* Side-by-side Brand elements (Tighter Gap & Expanded Scale) */}
-            <div className="w-250">
+            <div className="flex items-center gap-1.5 md:gap-2 select-none">
               <img 
                 src="/logo-icon.png" 
                 alt="BigLogic AI Logo" 
-                className="h-8 md:h-8 object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.08)] group-hover:scale-[1.03] transition-all duration-300"
+                className="h-8 object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.08)] group-hover:scale-[1.03] transition-all duration-300"
               />
               <img 
                 src="/logo-title.png" 
                 alt="BigLogic AI" 
-                className="h-6 md:h-6 object-contain drop-shadow-[0_1px_3px_rgba(0,0,0,0.04)] group-hover:brightness-90 transition-all duration-300"
+                className="h-6 object-contain drop-shadow-[0_1px_3px_rgba(0,0,0,0.04)] group-hover:brightness-90 transition-all duration-300"
               />
             </div>
           </Link>

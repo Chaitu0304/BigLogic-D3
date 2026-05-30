@@ -1,8 +1,71 @@
 import { useRef } from "react";
-import { Star, ShieldCheck, Quote } from "lucide-react";
+import { ShieldCheck, Quote } from "lucide-react";
 import { ScrollReveal } from "../ui/ScrollReveal";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { BlueprintHeading } from "../ui/BlueprintHeading";
+
+const Premium3DStar = ({ index = 0 }: { index?: number }) => {
+  const delays = [
+    "delay-0",
+    "delay-75",
+    "delay-150",
+    "delay-200",
+    "delay-300"
+  ];
+  
+  const rotations = [
+    "group-hover:rotate-[6deg]",
+    "group-hover:rotate-[-4deg]",
+    "group-hover:rotate-[8deg]",
+    "group-hover:rotate-[-6deg]",
+    "group-hover:rotate-[10deg]"
+  ];
+
+  return (
+    <svg 
+      className={`w-[17px] h-[17px] drop-shadow-[0_1.5px_2px_rgba(0,0,0,0.18)] filter shrink-0 transition-all duration-500 ease-out group-hover:scale-[1.45] group-hover:drop-shadow-[0_5px_8px_rgba(0,0,0,0.28)] ${delays[index]} ${rotations[index]}`}
+      viewBox="0 0 24 24" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        {/* Light facet gold gradient */}
+        <linearGradient id="gold-light" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#FFF3C4" />
+          <stop offset="50%" stopColor="#FBCA67" />
+          <stop offset="100%" stopColor="#D98A1A" />
+        </linearGradient>
+        
+        {/* Dark facet gold gradient (creates chiseled 3D contrast) */}
+        <linearGradient id="gold-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#E39C20" />
+          <stop offset="50%" stopColor="#AB7013" />
+          <stop offset="100%" stopColor="#694202" />
+        </linearGradient>
+      </defs>
+      
+      {/* Point 1 (Top) */}
+      <path d="M12 2 L9 9.5 L12 12 Z" fill="url(#gold-light)" />
+      <path d="M12 2 L12 12 L15 9.5 Z" fill="url(#gold-dark)" />
+      
+      {/* Point 2 (Right) */}
+      <path d="M22 9 L15 9.5 L12 12 Z" fill="url(#gold-light)" />
+      <path d="M22 9 L12 12 L16 14.5 Z" fill="url(#gold-dark)" />
+      
+      {/* Point 3 (Bottom Right) */}
+      <path d="M18 20 L16 14.5 L12 12 Z" fill="url(#gold-light)" />
+      <path d="M18 20 L12 12 L12 17 Z" fill="url(#gold-dark)" />
+      
+      {/* Point 4 (Bottom Left) */}
+      <path d="M6 20 L12 17 L12 12 Z" fill="url(#gold-light)" />
+      <path d="M6 20 L12 12 L8 14.5 Z" fill="url(#gold-dark)" />
+      
+      {/* Point 5 (Left) */}
+      <path d="M2 9 L8 14.5 L12 12 Z" fill="url(#gold-light)" />
+      <path d="M2 9 L12 12 L9 9.5 Z" fill="url(#gold-dark)" />
+    </svg>
+  );
+};
 
 export const Testimonials = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -89,7 +152,7 @@ export const Testimonials = () => {
                 {proof.map((item, index) => (
                   <div 
                     key={index} 
-                    className="bg-gradient-to-b from-white to-[#FAF9F6] border border-black/[0.06] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.02)] rounded-3xl flex flex-col justify-between relative overflow-visible w-[380px] h-[380px] shrink-0 group hover:border-black/[0.12] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-300"
+                    className="bg-gradient-to-b from-white to-[#FAF9F6] border border-black/[0.06] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.02)] rounded-3xl flex flex-col justify-between relative overflow-visible w-[380px] h-[380px] shrink-0 group hover:border-black/[0.16] hover:shadow-[0_24px_50px_rgba(0,0,0,0.08)] hover:-translate-y-2.5 transition-all duration-500 ease-out"
                   >
                     {/* Giant Watermark Quote Decoration */}
                     <div className="absolute top-6 right-8 text-black/[0.015] z-0 transition-colors group-hover:text-black/[0.035] pointer-events-none">
@@ -98,9 +161,9 @@ export const Testimonials = () => {
 
                     <div className="relative z-10 text-left">
                       {/* Stars */}
-                      <div className="flex items-center gap-1 mb-6">
+                      <div className="flex items-center gap-1.5 mb-6">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                          <Premium3DStar key={i} index={i} />
                         ))}
                       </div>
 
@@ -138,7 +201,7 @@ export const Testimonials = () => {
                 {proof.map((item, index) => (
                   <div 
                     key={`dup-${index}`} 
-                    className="bg-gradient-to-b from-white to-[#FAF9F6] border border-black/[0.06] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.02)] rounded-3xl flex flex-col justify-between relative overflow-visible w-[380px] h-[380px] shrink-0 group hover:border-black/[0.12] hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] transition-all duration-300"
+                    className="bg-gradient-to-b from-white to-[#FAF9F6] border border-black/[0.06] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.02)] rounded-3xl flex flex-col justify-between relative overflow-visible w-[380px] h-[380px] shrink-0 group hover:border-black/[0.16] hover:shadow-[0_24px_50px_rgba(0,0,0,0.08)] hover:-translate-y-2.5 transition-all duration-500 ease-out"
                   >
                     {/* Giant Watermark Quote Decoration */}
                     <div className="absolute top-6 right-8 text-black/[0.015] z-0 transition-colors group-hover:text-black/[0.035] pointer-events-none">
@@ -147,9 +210,9 @@ export const Testimonials = () => {
 
                     <div className="relative z-10 text-left">
                       {/* Stars */}
-                      <div className="flex items-center gap-1 mb-6">
+                      <div className="flex items-center gap-1.5 mb-6">
                         {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                          <Premium3DStar key={i} index={i} />
                         ))}
                       </div>
 
@@ -190,7 +253,7 @@ export const Testimonials = () => {
       {/* Background Pencil Sketches surrounding the content closer to content, larger, and more opaque */}
       <motion.div
         style={{ y: ySketch }}
-        className="absolute bottom-[-10%] left-[-80px] lg:left-[-140px] w-[350px] h-[350px] lg:w-[600px] lg:h-[600px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute bottom-[-10%] left-[-80px] lg:left-[-140px] w-[350px] h-[350px] lg:w-[600px] lg:h-[600px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_testimonial_agreement.png"
@@ -201,7 +264,7 @@ export const Testimonials = () => {
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute top-[1%] right-[-80px] lg:right-[20px] w-[350px] h-[350px] lg:w-[600px] lg:h-[600px] pointer-events-none z-0 mix-blend-multiply opacity-[0.2] overflow-hidden"
+        className="absolute top-[1%] right-[-80px] lg:right-[20px] w-[350px] h-[350px] lg:w-[600px] lg:h-[600px] pointer-events-none z-0 mix-blend-multiply opacity-[0.2] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_testimonial_stars.png"
@@ -212,7 +275,7 @@ export const Testimonials = () => {
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute bottom-[-3%] right-[-80px] lg:right-[-180px] w-[350px] h-[350px] lg:w-[600px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute bottom-[-3%] right-[-80px] lg:right-[-180px] w-[350px] h-[350px] lg:w-[600px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_testimonial_phone.png"
@@ -223,7 +286,7 @@ export const Testimonials = () => {
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute top-[-10%] left-[-80px] lg:left-[-120px] w-[350px] h-[350px] lg:w-[600px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute top-[-10%] left-[-80px] lg:left-[-120px] w-[350px] h-[350px] lg:w-[600px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_testimonial_megaphone.png"

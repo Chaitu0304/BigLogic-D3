@@ -48,14 +48,14 @@ export const RoiCalculator = () => {
           
           {/* Sliders panel (6 cols) */}
           <ScrollReveal direction="left" delay={150} className="lg:col-span-6 flex flex-col h-full">
-            <div className="bg-[#F8F8F8] border border-black/5 p-8 rounded-3xl flex flex-col justify-between hover-premium-card group z-10 w-full h-full">
+            <div className="bg-[#F8F8F8] border border-black/5 p-5 sm:p-8 rounded-3xl flex flex-col justify-between hover-premium-card group z-10 w-full h-full">
               <div className="space-y-10">
                 
                 {/* Slider 1 */}
                 <div className="flex flex-col gap-4">
-                  <div className="flex justify-between items-center font-bold">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2.5 items-start font-bold">
                     <label className="text-sm font-tech-landeros font-bold uppercase tracking-wider text-[#0A0A0A]">Estimates Processed / Month</label>
-                    <span className="text-2xl font-display-landeros font-extrabold text-[#0A0A0A] px-4 py-1.5 bg-[#F0F0F0] border border-black/10 rounded-2xl">
+                    <span className="text-2xl font-display-landeros font-extrabold text-[#0A0A0A] px-3.5 py-1 bg-[#F0F0F0] border border-black/10 rounded-xl shrink-0">
                       {estimateCount}
                     </span>
                   </div>
@@ -79,9 +79,9 @@ export const RoiCalculator = () => {
  
                 {/* Slider 2 */}
                 <div className="flex flex-col gap-4">
-                  <div className="flex justify-between items-center font-bold">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2.5 items-start font-bold">
                     <label className="text-sm font-tech-landeros font-bold uppercase tracking-wider text-[#0A0A0A]">Average Job/Estimate Size</label>
-                    <span className="text-2xl font-display-landeros font-extrabold text-[#0A0A0A] px-4 py-1.5 bg-[#F0F0F0] border border-black/10 rounded-2xl">
+                    <span className="text-2xl font-display-landeros font-extrabold text-[#0A0A0A] px-3.5 py-1 bg-[#F0F0F0] border border-black/10 rounded-xl shrink-0">
                       ${projectValue.toLocaleString()}
                     </span>
                   </div>
@@ -118,7 +118,7 @@ export const RoiCalculator = () => {
  
           {/* Results panel (6 cols) */}
           <ScrollReveal direction="right" delay={150} className="lg:col-span-6 flex flex-col h-full">
-            <div className="bg-[#F0F0F0] text-[#0A0A0A] p-8 md:p-10 border border-black/10 rounded-3xl flex flex-col justify-between text-left relative overflow-hidden hover-premium-card group z-10 shadow-[0_4px_20px_rgba(0,0,0,0.06)] w-full h-full">
+            <div className="bg-[#F0F0F0] text-[#0A0A0A] p-5 sm:p-8 md:p-10 border border-black/10 rounded-3xl flex flex-col justify-between text-left relative overflow-hidden hover-premium-card group z-10 shadow-[0_4px_20px_rgba(0,0,0,0.06)] w-full h-full">
               <div className="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none z-0">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-black/5 via-black/3 to-transparent rounded-full blur-xl opacity-80 group-hover:scale-110 transition-transform duration-700" />
               </div>
@@ -181,7 +181,7 @@ export const RoiCalculator = () => {
       {/* Background Pencil Sketches surrounding the content closer to content, larger, and more opaque */}
       <motion.div
         style={{ y: ySketch }}
-        className="absolute top-[-5%] left-[-80px] lg:left-[-180px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.1] overflow-hidden"
+        className="absolute top-[-5%] left-[-80px] lg:left-[-180px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.1] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_excel_compiler.png"
@@ -192,7 +192,7 @@ export const RoiCalculator = () => {
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute bottom-[5%] left-[-80px] lg:left-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute bottom-[5%] left-[-80px] lg:left-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_hourglass_clock.png"
@@ -203,7 +203,7 @@ export const RoiCalculator = () => {
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute top-[3%] right-[-80px] lg:right-[20px] w-[350px] h-[350px] lg:w-[600px] lg:h-[600px] pointer-events-none z-0 mix-blend-multiply opacity-[0.13] overflow-hidden"
+        className="absolute top-[3%] right-[-80px] lg:right-[20px] w-[350px] h-[350px] lg:w-[600px] lg:h-[600px] pointer-events-none z-0 mix-blend-multiply opacity-[0.13] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_calculator_ruler.png"
@@ -214,7 +214,7 @@ export const RoiCalculator = () => {
 
       <motion.div
         style={{ y: ySketch }}
-        className="absolute bottom-[3%] right-[-80px] lg:right-[-100px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden"
+        className="absolute bottom-[3%] right-[-80px] lg:right-[-100px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_ai_draw_scheduler.png"

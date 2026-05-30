@@ -159,7 +159,7 @@ export const HowItWorks = () => {
           WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)",
           maskImage: "radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)"
         }}
-        className="absolute bottom-[5%] left-[-100px] lg:left-[-150px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.14] overflow-hidden"
+        className="absolute bottom-[5%] left-[-100px] lg:left-[-150px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.14] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_pdf_upload_cloud.png"
@@ -174,7 +174,7 @@ export const HowItWorks = () => {
           WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)",
           maskImage: "radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)"
         }}
-        className="absolute top-[5%] right-[-80px] lg:right-[30px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.14] overflow-hidden"
+        className="absolute top-[5%] right-[-80px] lg:right-[30px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.14] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_ai_processor_gears.png"
@@ -189,7 +189,7 @@ export const HowItWorks = () => {
           WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)",
           maskImage: "radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)"
         }}
-        className="absolute bottom-[3%] right-[-80px] lg:right-[-30px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.14] overflow-hidden"
+        className="absolute bottom-[3%] right-[-80px] lg:right-[-30px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.14] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_draw_payout_chart.png"
@@ -204,7 +204,7 @@ export const HowItWorks = () => {
           WebkitMaskImage: "radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)",
           maskImage: "radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)"
         }}
-        className="absolute top-[-1%] left-[-80px] lg:left-[-150px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.1] overflow-hidden"
+        className="absolute top-[-1%] left-[-80px] lg:left-[-150px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-0 mix-blend-multiply opacity-[0.1] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_cleared_draws_calendar.png"
@@ -215,4 +215,3 @@ export const HowItWorks = () => {
     </section>
   );
 };
-
