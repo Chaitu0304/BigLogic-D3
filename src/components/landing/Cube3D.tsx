@@ -209,7 +209,7 @@ export const Cube3D: React.FC<Cube3DProps> = ({
       zIndex: 20,
       width: "92px",
       position: "absolute" as const,
-      top: "calc(0% - 46px)",
+      top: "calc(0% - 128.5px)",
       left: "calc(50% - 46px)",
       overflow: "visible" as const,
       transform: "rotateX(60deg) translateZ(30px)",
@@ -310,9 +310,10 @@ export const Cube3D: React.FC<Cube3DProps> = ({
           <div style={styles.iconsContainer}>
             <div className="absolute inset-0 flex items-center justify-center">
               <Icon
-                className="w-10 h-10 stroke-[2] select-none text-[#0A0A0A] transition-opacity duration-300"
+                className="w-10 h-10 stroke-[2] select-none text-[#0A0A0A] transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(10,10,10,0.35)] group-hover:opacity-100"
                 style={{
                   opacity: isActive ? 1 : 0.65,
+                  filter: isActive ? "drop-shadow(0 0 8px rgba(10, 10, 10, 0.22))" : "none",
                 }}
               />
             </div>
