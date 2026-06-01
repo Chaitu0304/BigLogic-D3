@@ -1,274 +1,205 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Sparkles } from "lucide-react";
 
 export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
   const [progress, setProgress] = useState(0);
-  const [loadingText, setLoadingText] = useState("CONNECTING TO SECURE NEURAL INFRASTRUCTURE...");
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [useFallback, setUseFallback] = useState(false);
-  const fallbackTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const [statusIndex, setStatusIndex] = useState(0);
 
-  const loadingStates = [
-    { threshold: 0, text: "CONNECTING TO SECURE NEURAL INFRASTRUCTURE..." },
-    { threshold: 20, text: "PARSING RECONSTRUCTION SCHEMATICS LAYERS..." },
-    { threshold: 45, text: "STABILIZING COMPLIANCE MATRIX INTEGRITY..." },
-    { threshold: 70, text: "CONFIGURING DEEP MATERIAL EXTRACTION AGENTS..." },
-    { threshold: 90, text: "ESTABLISHING CALM OPERATOR PIPELINE..." }
+  const statuses = [
+    "INITIALIZING SYSTEM CORES...",
+    "SECURING SOC-2 COMPLIANT ENCRYPTION...",
+    "CALIBRATING MODEL PIPELINES...",
+    "SYNCING WORKSPACE AGENTS...",
+    "SYSTEM READY."
   ];
 
-  // Video Time Update Listener (Desktop Realtime Sync)
-  const handleTimeUpdate = () => {
-    const video = videoRef.current;
-    if (!video || useFallback) return;
-    const duration = video.duration || 4; // fallback duration if NaN
-    const percent = Math.min((video.currentTime / duration) * 100, 100);
-    setProgress(Math.floor(percent));
-
-    const activeState = [...loadingStates]
-      .reverse()
-      .find(state => percent >= state.threshold);
-    if (activeState) {
-      setLoadingText(activeState.text);
-    }
-  };
-
-  // Video Playback Finished Listener
-  const handleVideoEnded = () => {
-    if (useFallback) return;
-    setProgress(100);
-    setTimeout(() => {
-      onComplete();
-    }, 600);
-  };
-
-  // Video Started Playback (Disable Fallback Ticker)
-  const handlePlay = () => {
-    if (fallbackTimerRef.current) {
-      clearTimeout(fallbackTimerRef.current);
-      fallbackTimerRef.current = null;
-    }
-    setUseFallback(false);
-  };
-
-  // Fallback Timer Initialization
+  // Animate status text changes as progress moves forward
   useEffect(() => {
-    const isMobile = window.innerWidth < 768;
-    if (isMobile) {
-      setUseFallback(true);
-      return;
+    if (progress < 25) {
+      setStatusIndex(0);
+    } else if (progress < 50) {
+      setStatusIndex(1);
+    } else if (progress < 75) {
+      setStatusIndex(2);
+    } else if (progress < 95) {
+      setStatusIndex(3);
+    } else {
+      setStatusIndex(4);
     }
+  }, [progress]);
 
-    fallbackTimerRef.current = setTimeout(() => {
-      setUseFallback(true);
-    }, 1500); // 1.5s margin to let the browser boot the video
-
-    return () => {
-      if (fallbackTimerRef.current) {
-        clearTimeout(fallbackTimerRef.current);
-      }
-    };
-  }, []);
-
-  // Simulated Fallback Ticker (For Mobile or slow desktop connections)
+  // Handle fake progress incrementing gracefully
   useEffect(() => {
-    if (!useFallback) return;
+    const totalDuration = 2200; // 2.2 seconds total loading time
+    const intervalTime = 22; // increment every 22ms
+    const step = 100 / (totalDuration / intervalTime);
 
-    let currentProgress = progress;
-    const interval = setInterval(() => {
-      const increment = Math.floor(Math.random() * 6) + 2; 
-      currentProgress = Math.min(currentProgress + increment, 100);
-      setProgress(currentProgress);
-
-      const activeState = [...loadingStates]
-        .reverse()
-        .find(state => currentProgress >= state.threshold);
-      if (activeState) {
-        setLoadingText(activeState.text);
-      }
-
-      if (currentProgress >= 100) {
-        clearInterval(interval);
-        setTimeout(() => {
-          onComplete();
-        }, 700);
-      }
-    }, 60);
-
-    return () => clearInterval(interval);
-  }, [useFallback]);
-
-  // 60FPS Cinematic Floating Dust Particles Canvas Loop
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-    
-    let animationFrameId: number;
-    let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = window.innerHeight);
-    
-    const handleResize = () => {
-      if (!canvas) return;
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    };
-    
-    window.addEventListener("resize", handleResize);
-    
-    // Create dust particle pool
-    const particleCount = 28;
-    const particles: Array<{
-      x: number;
-      y: number;
-      radius: number;
-      opacity: number;
-      vy: number;
-      vx: number;
-      pulseSpeed: number;
-      pulseDir: number;
-    }> = [];
-    
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        radius: Math.random() * 0.8 + 0.4, // ultra faint, tiny specks
-        opacity: Math.random() * 0.12 + 0.03, // faint opacities
-        vy: -(Math.random() * 0.15 + 0.05), // drift up slowly
-        vx: Math.random() * 0.1 - 0.05, // minor horizontal sway
-        pulseSpeed: Math.random() * 0.005 + 0.002,
-        pulseDir: Math.random() > 0.5 ? 1 : -1
+    const timer = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          clearInterval(timer);
+          setTimeout(() => {
+            onComplete();
+          }, 350); // slight pause at 100% for maximum premium transition feel
+          return 100;
+        }
+        return prev + step;
       });
-    }
-    
-    const render = () => {
-      ctx.clearRect(0, 0, width, height);
-      
-      for (let i = 0; i < particleCount; i++) {
-        const p = particles[i];
-        
-        // Update positions
-        p.y += p.vy;
-        p.x += p.vx;
-        
-        // Pulse opacity slightly to simulate dust catches light
-        p.opacity += p.pulseSpeed * p.pulseDir;
-        if (p.opacity > 0.18) {
-          p.pulseDir = -1;
-        } else if (p.opacity < 0.02) {
-          p.pulseDir = 1;
-        }
-        
-        // Reset boundaries
-        if (p.y < -10) {
-          p.y = height + 10;
-          p.x = Math.random() * width;
-        }
-        if (p.x < -10 || p.x > width + 10) {
-          p.vx = -p.vx;
-        }
-        
-        // Draw particle
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${p.opacity})`;
-        ctx.shadowColor = "rgba(255, 255, 255, 0.1)";
-        ctx.shadowBlur = 1;
-        ctx.fill();
+    }, intervalTime);
+
+    return () => clearInterval(timer);
+  }, [onComplete]);
+
+  const logoLetters = Array.from("BigLogic");
+
+  // Logo spring animation parameters
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.05,
+        delayChildren: 0.1
       }
-      
-      animationFrameId = requestAnimationFrame(render);
-    };
-    
-    render();
-    
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, []);
+    }
+  };
+
+  const letterVariants = {
+    hidden: { 
+      y: 35, 
+      opacity: 0, 
+      filter: "blur(5px)",
+      scale: 0.95
+    },
+    visible: { 
+      y: 0, 
+      opacity: 1, 
+      filter: "blur(0px)",
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 110,
+        damping: 13
+      }
+    }
+  };
 
   return (
     <motion.div
       initial={{ opacity: 1 }}
       exit={{ 
         opacity: 0,
-        scale: 1.01,
-        filter: "blur(12px)",
-        transition: { duration: 0.9, ease: [0.16, 1, 0.3, 1] }
+        scale: 1.015,
+        filter: "blur(4px)",
+        transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] }
       }}
-      className="fixed inset-0 z-[9999] bg-[#000000] flex flex-col items-center justify-center font-sans-landeros text-white select-none pointer-events-auto overflow-hidden w-full h-full"
+      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#FCFBFE] overflow-hidden select-none select-none"
     >
-      {/* 1. CINEMATIC LUXURY BACKDROP: Dust Canvas, Vignette, Spotlights */}
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none z-10" />
-      <div className="absolute inset-0 bg-grid-landeros opacity-[0.015] pointer-events-none z-5" />
-      
-      {/* Subtle gold key breathing lights */}
-      <motion.div 
-        animate={{
-          scale: [1, 1.12, 1],
-          opacity: [0.18, 0.28, 0.18],
-        }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[-10%] left-[-10%] w-[120%] h-[120%] bg-[radial-gradient(circle_at_35%_35%,_rgba(255,255,255,0.035)_0%,_transparent_55%)] pointer-events-none z-0"
-      />
-      
-      {/* Subtle Cinematic Vignette Overlay (Dark edges focused to center) */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_30%,_rgba(0,0,0,0.95)_100%)] pointer-events-none z-15" />
-
-      {/* 2. CENTERED CINEMATIC VIDEO + MOBILE LOADING RING & LOGO */}
-      <div className="absolute inset-0 w-full h-full z-10 overflow-hidden flex items-center justify-center pointer-events-none">
-        
-        {/* Glowing Golden Ring Loader for mobile viewports */}
-        <div className="absolute w-24 h-24 rounded-full border-2 border-amber-500/10 border-t-amber-400 animate-spin z-10 md:hidden shadow-[0_0_15px_rgba(245,158,11,0.2)]" />
-        
-        {/* Pulsing Brand Logo behind the loading ring on mobile */}
-        <motion.img
-          src="/logo-icon.png"
-          alt="Loading..."
-          animate={{ scale: [0.96, 1.04, 0.96], opacity: [0.4, 0.75, 0.4] }}
-          transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute w-12 h-12 object-contain filter brightness-125 z-10 md:hidden"
-        />
-
-        <video
-          ref={videoRef}
-          src="/vid_mp_ (online-video-cutter.com).mp4"
-          autoPlay
-          muted
-          playsInline
-          onPlay={handlePlay}
-          onTimeUpdate={handleTimeUpdate}
-          onEnded={handleVideoEnded}
-          className="w-full h-full max-w-[85vw] max-h-[68vh] md:max-w-[800px] md:max-h-[530px] object-contain opacity-95 z-20 hidden md:block mix-blend-screen"
-        />
+      {/* 1. TACTILE STUDIO WATERMARK BACKGROUND */}
+      <div className="absolute inset-0 z-0 pointer-events-none select-none opacity-[0.02]">
+        <div className="absolute inset-0 bg-grid-premium" />
       </div>
 
-      {/* 3. OVERLAID LOWER TELEMETRY (Percentage displays shifted down) */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center w-full max-w-sm px-6 text-center pointer-events-none z-30 gap-3">
+      {/* 2. PREMIUM LUXURY GREY SPOTLIGHT */}
+      {/* Centered directly behind the brand elements to establish a highly aesthetic contrast core */}
+      <motion.div 
+        animate={{ 
+          scale: [0.93, 1.03, 0.93],
+          opacity: [0.65, 0.85, 0.65]
+        }}
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+        className="absolute w-[450px] h-[300px] bg-[radial-gradient(circle_at_center,_rgba(120,120,120,0.18)_0%,_transparent_70%)] blur-[40px] pointer-events-none z-0" 
+      />
+
+      {/* 3. SHIELD CORE DESIGN FRAME */}
+      <div className="flex flex-col items-center justify-center relative z-10">
         
-        {/* Thin Glowing Gold Progress Tube */}
-        <div className="w-56 h-[2.5px] bg-white/5 rounded-full overflow-hidden relative shadow-inner">
+        {/* Soft Sparkle Core */}
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mb-6 flex items-center justify-center w-10 h-10 rounded-full border border-black/5 bg-black/5 text-[#0A0A0A] shadow-sm relative"
+        >
+          <Sparkles className="w-4 h-4 text-[#0A0A0A]" />
           <motion.div
-            className="h-full bg-gradient-to-r from-amber-500 via-amber-400 to-amber-300 shadow-[0_0_12px_rgba(245,158,11,0.65)]"
+            animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0, 0.3] }}
+            transition={{ repeat: Infinity, duration: 2.2 }}
+            className="absolute inset-0 rounded-full border border-black/20"
+          />
+        </motion.div>
+
+        {/* 4. SPRINGreveal TEXT BRANDING LOGO & TITLE */}
+        <div className="relative py-2.5 overflow-hidden">
+          {/* Laser sweeps vertically once during the letter reveal */}
+          <motion.div
+            initial={{ y: -30, opacity: 0 }}
+            animate={{ 
+              y: [null, 25, -20],
+              opacity: [0, 0.4, 0.5, 0]
+            }}
+            transition={{ 
+              duration: 1.6, 
+              delay: 0.5,
+              ease: "easeInOut" 
+            }}
+            className="absolute left-[-20%] right-[-20%] h-[1.5px] bg-gradient-to-r from-transparent via-[#0A0A0A]/40 to-transparent pointer-events-none z-10"
+          />
+
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="font-display-landeros text-3xl md:text-4xl font-bold tracking-tight flex items-center gap-0.5 text-[#0A0A0A] select-none"
+          >
+            {/* Split "BigLogic" into staggered character blocks */}
+            {logoLetters.map((char, index) => (
+              <motion.span
+                key={index}
+                variants={letterVariants}
+                className="inline-block"
+              >
+                {char}
+              </motion.span>
+            ))}
+
+            {/* Title / Suffix Splicer "AI" */}
+            <motion.span
+              initial={{ opacity: 0, scale: 0.85, filter: "blur(4px)" }}
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              transition={{ delay: 0.65, duration: 0.6, ease: "easeOut" }}
+              className="text-[#3A3A3A] drop-shadow-[0_0_12px_rgba(10,10,10,0.12)] ml-0.5"
+            >
+              AI
+            </motion.span>
+          </motion.div>
+        </div>
+
+        {/* 5. RAZOR-THIN PREMIUM STATUS PROGRESS BAR */}
+        <div className="w-48 h-[1.5px] bg-black/5 rounded-full overflow-hidden mt-6 relative shadow-sm">
+          <motion.div
+            className="h-full bg-[#0A0A0A]"
             style={{ width: `${progress}%` }}
-            transition={{ ease: "easeInOut" }}
+            transition={{ ease: "linear" }}
           />
         </div>
 
-        {/* Boot Progress Log Output */}
-        <div className="font-tech-landeros text-[10px] font-bold tracking-widest text-neutral-400 uppercase h-4 min-w-[280px] select-none opacity-85">
-          {loadingText}
-        </div>
-
-        {/* Monospaced Progress Percentage (Positioned at bottom anchor) */}
-        <div className="font-mono text-3xl font-light text-white tracking-widest min-w-[120px] select-none mt-0.5">
-          <span className="bg-gradient-to-b from-white to-neutral-400 bg-clip-text text-transparent font-light drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
-            {progress}%
-          </span>
+        {/* 6. MICRO-TECHNICAL STATUS TICKER */}
+        <div className="h-6 flex items-center justify-center mt-3">
+          <motion.span
+            key={statusIndex}
+            initial={{ opacity: 0, y: 5 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -5 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="text-[10px] font-bold text-[#6B6B6B] tracking-[0.16em] font-tech-landeros uppercase select-none"
+          >
+            {statuses[statusIndex]}
+          </motion.span>
         </div>
 
       </div>

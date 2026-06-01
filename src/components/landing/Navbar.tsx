@@ -89,19 +89,9 @@ export const Navbar = () => {
             }}
             className="flex items-center group shrink-0 select-none"
           >
-            {/* Side-by-side Brand elements (Tighter Gap & Expanded Scale) */}
-            <div className="flex items-center gap-1.5 md:gap-2 select-none">
-              <img 
-                src="/logo-icon.png" 
-                alt="BigLogic AI Logo" 
-                className="h-8 object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.08)] group-hover:scale-[1.03] transition-all duration-300"
-              />
-              <img 
-                src="/logo-title.png" 
-                alt="BigLogic AI" 
-                className="h-6 object-contain drop-shadow-[0_1px_3px_rgba(0,0,0,0.04)] group-hover:brightness-90 transition-all duration-300"
-              />
-            </div>
+            <span className="font-display-landeros text-base md:text-lg font-bold tracking-tight flex items-center gap-0.5 text-[#0A0A0A] whitespace-nowrap">
+              BigLogic<span className="text-[#3A3A3A]">AI</span>
+            </span>
           </Link>
  
           {/* Desktop Menu Link Pill Wrappers */}

@@ -24,7 +24,7 @@ const Index = () => {
 
   return (
     <>
-      {/* Luxury Preloader preloader layer */}
+      {/* Premium Luxury Preloader Screen */}
       <AnimatePresence mode="wait">
         {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
       </AnimatePresence>
