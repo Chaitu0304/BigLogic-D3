@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
 
 export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
   const [progress, setProgress] = useState(0);
@@ -51,35 +50,29 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
     return () => clearInterval(timer);
   }, [onComplete]);
 
-  const logoLetters = Array.from("BigLogic");
+  // Generate highly randomized cinematic dust particles on mount
+  const dustParticles = useMemo(() => {
+    return Array.from({ length: 18 }).map((_, i) => ({
+      id: i,
+      size: Math.random() * 2 + 0.8, // 0.8px to 2.8px
+      xStart: Math.random() * 100, // percentage left (vw)
+      yStart: Math.random() * 80 + 10, // percentage top (vh)
+      duration: Math.random() * 8 + 7, // 7s to 15s speed
+      delay: Math.random() * -12, // negative delay so particles start scattered on mount
+      xOffset: Math.random() * 30 - 15 // horizontal drift
+    }));
+  }, []);
 
-  // Logo spring animation parameters
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.05,
-        delayChildren: 0.1
-      }
-    }
-  };
-
-  const letterVariants = {
-    hidden: { 
-      y: 35, 
-      opacity: 0, 
-      filter: "blur(5px)",
-      scale: 0.95
-    },
+  const logoVariants = {
+    hidden: { opacity: 0, scale: 0.93, filter: "blur(6px)" },
     visible: { 
-      y: 0, 
       opacity: 1, 
+      scale: 1, 
       filter: "blur(0px)",
-      scale: 1,
       transition: {
-        type: "spring",
-        stiffness: 110,
-        damping: 13
+        duration: 1.2,
+        ease: [0.16, 1, 0.3, 1],
+        delay: 0.1
       }
     }
   };
@@ -93,102 +86,115 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
         filter: "blur(4px)",
         transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] }
       }}
-      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#FCFBFE] overflow-hidden select-none select-none"
+      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#0B0B0C] overflow-hidden select-none"
     >
-      {/* 1. TACTILE STUDIO WATERMARK BACKGROUND */}
-      <div className="absolute inset-0 z-0 pointer-events-none select-none opacity-[0.02]">
-        <div className="absolute inset-0 bg-grid-premium" />
-      </div>
+      {/* 1. CINEMATIC FLOAT DUST PARTICLES */}
+      {dustParticles.map((p) => (
+        <motion.div
+          key={p.id}
+          initial={{ 
+            x: `${p.xStart}vw`, 
+            y: `${p.yStart}vh`, 
+            opacity: 0 
+          }}
+          animate={{ 
+            y: "-10vh",
+            x: [`${p.xStart}vw`, `${p.xStart + p.xOffset}vw`],
+            opacity: [0, 0.35, 0.35, 0]
+          }}
+          transition={{
+            duration: p.duration,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: p.delay
+          }}
+          style={{
+            position: "absolute",
+            width: p.size,
+            height: p.size,
+            backgroundColor: "rgba(255, 255, 255, 0.22)",
+            borderRadius: "50%",
+            filter: "blur(0.5px)",
+            pointerEvents: "none",
+            zIndex: 1
+          }}
+        />
+      ))}
 
-      {/* 2. PREMIUM LUXURY GREY SPOTLIGHT */}
-      {/* Centered directly behind the brand elements to establish a highly aesthetic contrast core */}
+      {/* 2. SUBTLE CINEMATIC VIGNETTE OVERLAY */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_transparent_30%,_#020202_100%)] pointer-events-none z-10 opacity-80" />
+
+      {/* 3. PREMIUM LUXURY SPATIAL SPOTLIGHT */}
       <motion.div 
         animate={{ 
-          scale: [0.93, 1.03, 0.93],
-          opacity: [0.65, 0.85, 0.65]
+          scale: [0.95, 1.05, 0.95],
+          opacity: [0.7, 0.9, 0.7]
         }}
         transition={{
-          duration: 4,
+          duration: 5,
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute w-[450px] h-[300px] bg-[radial-gradient(circle_at_center,_rgba(120,120,120,0.18)_0%,_transparent_70%)] blur-[40px] pointer-events-none z-0" 
+        className="absolute w-[500px] h-[320px] bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.035)_0%,_transparent_75%)] blur-[45px] pointer-events-none z-0" 
       />
 
-      {/* 3. SHIELD CORE DESIGN FRAME */}
-      <div className="flex flex-col items-center justify-center relative z-10">
+      {/* 4. BRANDING DESIGN CONTAINER FRAME */}
+      <div className="flex flex-col items-center justify-center relative z-20">
         
-        {/* Soft Sparkle Core */}
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-6 flex items-center justify-center w-10 h-10 rounded-full border border-black/5 bg-black/5 text-[#0A0A0A] shadow-sm relative"
-        >
-          <Sparkles className="w-4 h-4 text-[#0A0A0A]" />
+        {/* Animated sweeps laser axis line */}
+        <div className="relative py-3.5 overflow-hidden">
           <motion.div
-            animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0, 0.3] }}
-            transition={{ repeat: Infinity, duration: 2.2 }}
-            className="absolute inset-0 rounded-full border border-black/20"
-          />
-        </motion.div>
-
-        {/* 4. SPRINGreveal TEXT BRANDING LOGO & TITLE */}
-        <div className="relative py-2.5 overflow-hidden">
-          {/* Laser sweeps vertically once during the letter reveal */}
-          <motion.div
-            initial={{ y: -30, opacity: 0 }}
+            initial={{ y: -45, opacity: 0 }}
             animate={{ 
-              y: [null, 25, -20],
-              opacity: [0, 0.4, 0.5, 0]
+              y: [null, 40, -35],
+              opacity: [0, 0.3, 0.4, 0]
             }}
             transition={{ 
-              duration: 1.6, 
-              delay: 0.5,
+              duration: 2.0, 
+              delay: 0.3,
               ease: "easeInOut" 
             }}
-            className="absolute left-[-20%] right-[-20%] h-[1.5px] bg-gradient-to-r from-transparent via-[#0A0A0A]/40 to-transparent pointer-events-none z-10"
+            className="absolute left-[-20%] right-[-20%] h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none z-20"
           />
 
           <motion.div
-            variants={containerVariants}
+            variants={logoVariants}
             initial="hidden"
             animate="visible"
-            className="font-display-landeros text-3xl md:text-4xl font-bold tracking-tight flex items-center gap-0.5 text-[#0A0A0A] select-none"
+            className="flex items-center justify-center select-none relative"
           >
-            {/* Split "BigLogic" into staggered character blocks */}
-            {logoLetters.map((char, index) => (
-              <motion.span
-                key={index}
-                variants={letterVariants}
-                className="inline-block"
-              >
-                {char}
-              </motion.span>
-            ))}
-
-            {/* Title / Suffix Splicer "AI" */}
-            <motion.span
-              initial={{ opacity: 0, scale: 0.85, filter: "blur(4px)" }}
-              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-              transition={{ delay: 0.65, duration: 0.6, ease: "easeOut" }}
-              className="text-[#3A3A3A] drop-shadow-[0_0_12px_rgba(10,10,10,0.12)] ml-0.5"
-            >
-              AI
-            </motion.span>
+            {/* White Premium Logo meant for dark backgrounds */}
+            <img 
+              src="/logo.png" 
+              alt="BigLogic" 
+              className="h-14 md:h-16 w-auto object-contain drop-shadow-[0_4px_24px_rgba(255,255,255,0.08)] relative z-10"
+            />
+            {/* Soft ambient white under-glow for the image logo */}
+            <motion.div 
+              animate={{ 
+                opacity: [0.3, 0.6, 0.3],
+                scale: [0.95, 1.05, 0.95]
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.06)_0%,_transparent_70%)] blur-[12px] pointer-events-none z-0"
+            />
           </motion.div>
         </div>
 
-        {/* 5. RAZOR-THIN PREMIUM STATUS PROGRESS BAR */}
-        <div className="w-48 h-[1.5px] bg-black/5 rounded-full overflow-hidden mt-6 relative shadow-sm">
+        {/* 5. RAZOR-THIN PREMIUM SILVER PROGRESS BAR */}
+        <div className="w-48 h-[1px] bg-white/10 rounded-full overflow-hidden mt-6 relative shadow-lg">
           <motion.div
-            className="h-full bg-[#0A0A0A]"
+            className="h-full bg-white"
             style={{ width: `${progress}%` }}
             transition={{ ease: "linear" }}
           />
         </div>
 
-        {/* 6. MICRO-TECHNICAL STATUS TICKER */}
+        {/* 6. TECHNICAL STATUS TICKER */}
         <div className="h-6 flex items-center justify-center mt-3">
           <motion.span
             key={statusIndex}
@@ -196,7 +202,7 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -5 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="text-[10px] font-bold text-[#6B6B6B] tracking-[0.16em] font-tech-landeros uppercase select-none"
+            className="text-[10px] font-bold text-white/40 tracking-[0.16em] font-tech-landeros uppercase select-none"
           >
             {statuses[statusIndex]}
           </motion.span>
