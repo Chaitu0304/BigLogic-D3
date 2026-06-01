@@ -13,12 +13,12 @@ export const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
-      setIsNavVisible(window.scrollY > 80 || location.pathname !== "/");
+      setIsNavVisible(window.scrollY > 5 || location.pathname !== "/");
     };
     
     // Set initial values
     setIsScrolled(window.scrollY > 20);
-    setIsNavVisible(window.scrollY > 80 || location.pathname !== "/");
+    setIsNavVisible(window.scrollY > 5 || location.pathname !== "/");
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -53,20 +53,60 @@ export const Navbar = () => {
     { name: "FAQ", id: "faq" },
   ];
 
+  const logoVariants = {
+    hidden: { x: -16, opacity: 0 },
+    visible: { 
+      x: 0, 
+      opacity: 1,
+      transition: { type: "spring", stiffness: 120, damping: 16, delay: 2.5 }
+    }
+  };
+
+  const linkContainerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.05,
+        delayChildren: 2.6
+      }
+    }
+  };
+
+  const linkItemVariants = {
+    hidden: { y: -12, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: { type: "spring", stiffness: 140, damping: 14 }
+    }
+  };
+
+  const actionsVariants = {
+    hidden: { x: 16, opacity: 0 },
+    visible: { 
+      x: 0, 
+      opacity: 1,
+      transition: { type: "spring", stiffness: 120, damping: 16, delay: 2.9 }
+    }
+  };
+
   return (
     <motion.header
-      initial={{ y: -120, opacity: 0, x: "-50%" }}
-      animate={{ 
-        y: isNavVisible ? 0 : -120, 
-        opacity: isNavVisible ? 1 : 0,
-        x: "-50%"
+      initial="hidden"
+      animate={isNavVisible ? "visible" : "hidden"}
+      variants={{
+        hidden: { y: -100, opacity: 0 },
+        visible: { 
+          y: 0, 
+          opacity: 1,
+          transition: {
+            type: "spring",
+            stiffness: 110,
+            damping: 18
+          }
+        }
       }}
-      transition={{ 
-        type: "spring", 
-        stiffness: 240, 
-        damping: 24,
-        opacity: { duration: 0.2 }
-      }}
+      style={{ x: "-50%" }}
       className="fixed top-5 left-1/2 z-50 w-[96%] lg:w-[95%] xl:w-[86%] lg:max-w-[1080px] xl:max-w-[1200px]"
     >
       {/* Floating Glass Capsule Wrapper with Double Boundary Frame */}
@@ -79,38 +119,53 @@ export const Navbar = () => {
       >
         <div className="flex items-center justify-between w-full">
           {/* Brand Logo with Glowing Status Indicator */}
-          <Link 
-            to="/" 
-            onClick={(e) => {
-              if (window.location.pathname === "/") {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }
-            }}
-            className="flex items-center group shrink-0 select-none"
-          >
-            <span className="font-display-landeros text-base md:text-lg font-bold tracking-tight flex items-center gap-0.5 text-[#0A0A0A] whitespace-nowrap">
-              BigLogic<span className="text-[#3A3A3A]">AI</span>
-            </span>
-          </Link>
+          <motion.div variants={logoVariants} initial="hidden" animate="visible">
+            <Link 
+              to="/" 
+              onClick={(e) => {
+                if (window.location.pathname === "/") {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
+              className="flex items-center group shrink-0 select-none"
+            >
+              <img 
+                src="/logo-light-theme.png" 
+                alt="BigLogic AI Logo" 
+                className="h-8 md:h-9 w-auto object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.06)] group-hover:scale-[1.02] transition-all duration-300 select-none"
+              />
+            </Link>
+          </motion.div>
  
           {/* Desktop Menu Link Pill Wrappers */}
-          <div className="hidden lg:flex items-center gap-1 xl:gap-2 text-[10.5px] xl:text-[12.5px] font-bold uppercase tracking-wider text-[#6B6B6B] whitespace-nowrap shrink-0">
+          <motion.div 
+            variants={linkContainerVariants} 
+            initial="hidden" 
+            animate="visible"
+            className="hidden lg:flex items-center gap-1 xl:gap-2 text-[10.5px] xl:text-[12.5px] font-bold uppercase tracking-wider text-[#6B6B6B] whitespace-nowrap shrink-0"
+          >
             {navLinks.map((link) => (
-              <a
+              <motion.a
                 key={link.name}
                 href={`#${link.id}`}
+                variants={linkItemVariants}
                 onClick={(e) => scrollToSection(e, link.id)}
                 className="relative py-1.5 px-3.5 rounded-full hover:bg-[#0A0A0A]/5 text-[#6B6B6B] hover:text-[#0A0A0A] transition-all duration-300 tracking-widest font-tech-landeros group select-none"
               >
                 {link.name}
                 <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-0 h-[1.5px] bg-[#0A0A0A] transition-all duration-300 group-hover:w-2" />
-              </a>
+              </motion.a>
             ))}
-          </div>
- 
+          </motion.div>
+  
           {/* Unified Action Buttons */}
-          <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0 whitespace-nowrap">
+          <motion.div 
+            variants={actionsVariants} 
+            initial="hidden" 
+            animate="visible"
+            className="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0 whitespace-nowrap"
+          >
             {localStorage.getItem("token") ? (
               <button
                 onClick={() => navigate("/dashboard")}
@@ -134,7 +189,7 @@ export const Navbar = () => {
                 </button>
               </>
             )}
-          </div>
+          </motion.div>
  
           {/* Mobile Menu Trigger */}
           <div className="flex items-center lg:hidden">

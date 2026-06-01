@@ -47,10 +47,10 @@ export const Hero = () => {
   const ySketch = useTransform(scrollY, [0, 1000], [0, -150]);
 
   const tabs = [
-    { id: 0, label: "1. PDF Scraping", icon: FileText },
-    { id: 1, label: "2. Creating Dashboards", icon: BarChart3 },
-    { id: 2, label: "3. Managing Tasks", icon: ListTodo },
-    { id: 3, label: "4. Automating", icon: Shield },
+    { id: 0, label: "1. PDF Scraping", icon: Layers },
+    { id: 1, label: "2. Creating Dashboards", icon: Activity },
+    { id: 2, label: "3. Managing Tasks", icon: Workflow },
+    { id: 3, label: "4. Automating", icon: Brain },
   ];
 
   // Auto-rotation timer with progress bar
@@ -291,7 +291,7 @@ export const Hero = () => {
               {/* Back / Top Cube: PDF SCRAPING */}
               <div className="absolute top-[0%] left-1/2 -translate-x-1/2">
                 <Cube3D
-                  icon={FileText}
+                  icon={Layers}
                   label="1. PDF Scraping"
                   sublabel="Extract materials in 45s"
                   delay={0}
@@ -303,7 +303,7 @@ export const Hero = () => {
               {/* Left Cube: CREATING DASHBOARDS */}
               <div className="absolute top-[28%] left-[4%]">
                 <Cube3D
-                  icon={BarChart3}
+                  icon={Activity}
                   label="2. Live Dashboards"
                   sublabel="Real-time draw analytics"
                   delay={0.4}
@@ -315,7 +315,7 @@ export const Hero = () => {
               {/* Right Cube: MANAGING TASKS */}
               <div className="absolute top-[28%] right-[4%]">
                 <Cube3D
-                  icon={ListTodo}
+                  icon={Workflow}
                   label="3. Managing Tasks"
                   sublabel="AI automated workflows"
                   delay={0.8}
@@ -327,7 +327,7 @@ export const Hero = () => {
               {/* Front / Bottom Cube: AUTOMATING */}
               <div className="absolute bottom-[0%] left-1/2 -translate-x-1/2">
                 <Cube3D
-                  icon={Shield}
+                  icon={Brain}
                   label="4. Automating"
                   sublabel="Calm operator pipelines"
                   delay={1.2}
@@ -343,7 +343,7 @@ export const Hero = () => {
               {/* Back / Top Cube: PDF SCRAPING */}
               <div className="absolute top-[0%] left-1/2 -translate-x-1/2">
                 <Cube3D
-                  icon={FileText}
+                  icon={Layers}
                   label="1. PDF Scraping"
                   sublabel="Extract materials in 45s"
                   delay={0}
@@ -355,7 +355,7 @@ export const Hero = () => {
               {/* Left Cube: CREATING DASHBOARDS */}
               <div className="absolute top-[28%] left-[-15px] sm:left-[0%]">
                 <Cube3D
-                  icon={BarChart3}
+                  icon={Activity}
                   label="2. Live Dashboards"
                   sublabel="Real-time draw analytics"
                   delay={0.4}
@@ -367,7 +367,7 @@ export const Hero = () => {
               {/* Right Cube: MANAGING TASKS */}
               <div className="absolute top-[28%] right-[-15px] sm:right-[0%]">
                 <Cube3D
-                  icon={ListTodo}
+                  icon={Workflow}
                   label="3. Managing Tasks"
                   sublabel="AI automated workflows"
                   delay={0.8}
@@ -379,7 +379,7 @@ export const Hero = () => {
               {/* Front / Bottom Cube: AUTOMATING */}
               <div className="absolute bottom-[0%] left-1/2 -translate-x-1/2">
                 <Cube3D
-                  icon={Shield}
+                  icon={Brain}
                   label="4. Automating"
                   sublabel="Calm operator pipelines"
                   delay={1.2}
@@ -515,7 +515,7 @@ export const Hero = () => {
                           <span className="text-[8.5px] font-bold text-[#6B6B6B] font-tech-landeros">ESTIMATE_PDF</span>
                         </div>
  
-                        <FileText className="w-14 h-14 text-[#0A0A0A] mb-3 mt-4" />
+                        <Layers className="w-14 h-14 text-[#0A0A0A] mb-3 mt-4" />
                         <span className="font-tech-landeros text-[10.5px] font-bold text-black/70 truncate max-w-full text-center">
                           Estimate_Final_Xact.pdf
                         </span>

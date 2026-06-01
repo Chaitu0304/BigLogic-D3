@@ -31,28 +31,28 @@ export const Cube3D: React.FC<Cube3DProps> = ({
       // PDF Scraping - Silver Chrome
       glow: "bg-black/8 shadow-[0_0_60px_rgba(0,0,0,0.1)]",
       activeText: "text-[#0A0A0A]",
-      filter: "grayscale(1) contrast(1.25) brightness(1.15)",
+      filter: "grayscale(1) contrast(1.08) brightness(0.92)",
       idleFilter: "grayscale(1) contrast(0.95) brightness(0.8)",
     },
     {
       // Live Dashboards - Liquid Silver
       glow: "bg-neutral-300/15 shadow-[0_0_60px_rgba(0,0,0,0.1)]",
       activeText: "text-[#3A3A3A]",
-      filter: "grayscale(1) contrast(1.3) brightness(1.1)",
+      filter: "grayscale(1) contrast(1.05) brightness(0.88)",
       idleFilter: "grayscale(1) contrast(0.9) brightness(0.75)",
     },
     {
       // Managing Tasks - Metallic Graphite
       glow: "bg-black/5 shadow-[0_0_60px_rgba(0,0,0,0.1)]",
       activeText: "text-[#3A3A3A]",
-      filter: "grayscale(1) contrast(1.2) brightness(0.95)",
+      filter: "grayscale(1) contrast(1.02) brightness(0.8)",
       idleFilter: "grayscale(1) contrast(0.85) brightness(0.7)",
     },
     {
       // Automating - Frost Glass
       glow: "bg-black/8 shadow-[0_0_60px_rgba(0,0,0,0.1)]",
       activeText: "text-[#0A0A0A]",
-      filter: "grayscale(1) contrast(1.35) brightness(1.2)",
+      filter: "grayscale(1) contrast(1.1) brightness(0.95)",
       idleFilter: "grayscale(1) contrast(1.0) brightness(0.85)",
     },
   ];
@@ -79,6 +79,7 @@ export const Cube3D: React.FC<Cube3DProps> = ({
       left: 0,
       overflow: "visible" as const,
       zIndex: 2,
+      transformStyle: "preserve-3d" as const,
     },
     // Bottom Cap container
     bottomContainer: {
@@ -205,13 +206,13 @@ export const Cube3D: React.FC<Cube3DProps> = ({
     iconsContainer: {
       height: "92px",
       transformStyle: "preserve-3d" as const,
-      zIndex: 10,
+      zIndex: 20,
       width: "92px",
       position: "absolute" as const,
       top: "calc(0% - 46px)",
       left: "calc(50% - 46px)",
       overflow: "visible" as const,
-      transform: "rotateX(60deg)",
+      transform: "rotateX(60deg) translateZ(30px)",
     },
     // Floor drop shadow container
     shadowContainer: {

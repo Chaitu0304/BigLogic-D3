@@ -1,6 +1,6 @@
 import DashboardLayout from "@/components/DashboardLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { FileText, CheckCircle, Clock, TrendingUp, MoreHorizontal, ArrowUpRight, Zap } from "lucide-react";
+import { FileText, CheckCircle, Clock, TrendingUp, MoreHorizontal, ArrowUpRight, Zap, Layers, ShieldCheck, Cpu } from "lucide-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
@@ -32,7 +32,7 @@ const Dashboard = () => {
     {
       title: "Total Workflows",
       value: totalWorkflows.toString(),
-      icon: FileText,
+      icon: Layers,
       trend: "+12.5%",
       color: "text-blue-500 dark:text-blue-400",
       bg: "bg-blue-500/10",
@@ -41,7 +41,7 @@ const Dashboard = () => {
     {
       title: "Completed",
       value: completedWorkflows.toString(),
-      icon: CheckCircle,
+      icon: ShieldCheck,
       trend: "+92%",
       color: "text-emerald-600 dark:text-emerald-400",
       bg: "bg-emerald-500/10",
@@ -50,7 +50,7 @@ const Dashboard = () => {
     {
       title: "Processing",
       value: processingWorkflows.toString(),
-      icon: Zap,
+      icon: Cpu,
       trend: "Active",
       color: "text-primary",
       bg: "bg-primary/10",
@@ -150,7 +150,7 @@ const Dashboard = () => {
                         <td className="p-6">
                           <div className="flex items-center gap-4">
                             <div className="p-2 rounded-lg bg-muted text-muted-foreground group-hover:bg-primary/20 group-hover:text-primary transition-colors">
-                              <FileText size={18} />
+                              <Layers size={18} />
                             </div>
                             <div>
                               <p className="font-medium text-foreground">

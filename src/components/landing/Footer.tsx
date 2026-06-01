@@ -57,7 +57,7 @@ export const Footer = () => {
 
           {/* Brand Column */}
           <div className="space-y-3 text-left">
-            {/* Unified text logo lockup */}
+            {/* Unified image logo lockup */}
             <Link 
               to="/" 
               onClick={(e) => {
@@ -66,11 +66,13 @@ export const Footer = () => {
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }
               }}
-              className="flex items-center gap-1.5 group select-none"
+              className="flex items-center group select-none"
             >
-              <span className="font-display-landeros text-lg md:text-xl font-bold tracking-tight flex items-center gap-0.5 text-white whitespace-nowrap">
-                BigLogic<span className="text-neutral-400">AI</span>
-              </span>
+              <img 
+                src="/logo.png" 
+                alt="BigLogic AI Logo" 
+                className="h-10 md:h-12 w-auto object-contain drop-shadow-[0_2px_8px_rgba(255,255,255,0.05)] group-hover:scale-[1.02] transition-all duration-300 select-none"
+              />
             </Link>
 
             <p className="font-medium text-xs leading-relaxed text-[#9E9E9E] max-w-xs pt-1">
