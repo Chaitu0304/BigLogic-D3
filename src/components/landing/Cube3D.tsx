@@ -63,7 +63,7 @@ export const Cube3D: React.FC<Cube3DProps> = ({
   const floatTransition = {
     duration: 4,
     repeat: Infinity,
-    ease: "easeInOut",
+    ease: "easeInOut" as const,
     delay: delay,
   };
 
@@ -202,17 +202,20 @@ export const Cube3D: React.FC<Cube3DProps> = ({
       WebkitBackdropFilter: "blur(2px)",
       backgroundColor: "rgba(246, 236, 221, 0.01)",
     },
-    // Icons layer container (floating flat above the deck)
+    // Icons layer container (sitting perfectly flat on the deck)
     iconsContainer: {
-      height: "92px",
-      transformStyle: "preserve-3d" as const,
-      zIndex: 20,
-      width: "92px",
+      width: "165px",
+      height: "165px",
       position: "absolute" as const,
-      top: "calc(0% - 128.5px)",
-      left: "calc(50% - 46px)",
+      top: "calc(50% - 82.5px)",
+      left: "calc(50% - 82.5px)",
       overflow: "visible" as const,
-      transform: "rotateX(60deg) translateZ(30px)",
+      transform: "rotateX(90deg) translateZ(-4px)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      pointerEvents: "none" as const,
+      zIndex: 10,
     },
     // Floor drop shadow container
     shadowContainer: {
@@ -300,24 +303,24 @@ export const Cube3D: React.FC<Cube3DProps> = ({
           <div style={styles.topContainer}>
             <div style={styles.wrap}>
               <div style={styles.topPlate} />
+              
+              {/* F. Elevated Flat Icon Layer - placed flat on topPlate */}
+              <div style={styles.iconsContainer}>
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <Icon
+                    className="w-10 h-10 stroke-[2] select-none text-[#0A0A0A] transition-all duration-300 group-hover:drop-shadow-[0_0_15px_rgba(0,0,0,0.95)] group-hover:opacity-100 group-hover:scale-110"
+                    style={{
+                      opacity: isActive ? 1 : 0.65,
+                      filter: isActive ? "drop-shadow(0 0 10px rgba(0, 0, 0, 0.95))" : "none",
+                    }}
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
           {/* E. Backdrop Blur overlay */}
-          <div style={styles.blur} />
-
-          {/* F. Elevated Flat Icon Layer */}
-          <div style={styles.iconsContainer}>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <Icon
-                className="w-10 h-10 stroke-[2] select-none text-[#0A0A0A] transition-all duration-300 group-hover:drop-shadow-[0_0_12px_rgba(10,10,10,0.35)] group-hover:opacity-100"
-                style={{
-                  opacity: isActive ? 1 : 0.65,
-                  filter: isActive ? "drop-shadow(0 0 8px rgba(10, 10, 10, 0.22))" : "none",
-                }}
-              />
-            </div>
-          </div>
+          <div />
         </motion.div>
       </div>
 
@@ -326,7 +329,7 @@ export const Cube3D: React.FC<Cube3DProps> = ({
         className={`absolute inset-0 rounded-full blur-[40px] -z-10 transition-all duration-500 pointer-events-none scale-75 md:scale-100 ${
           isActive
             ? `opacity-100 ${currentTheme.glow}`
-            : "opacity-0 scale-90 group-hover:opacity-40"
+            : "opacity-0 scale-90 group-hover:opacity-80"
         }`}
       />
     </div>

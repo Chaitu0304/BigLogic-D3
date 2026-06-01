@@ -54,6 +54,16 @@ const FieldNotesDashboard = () => {
     const [projectToDelete, setProjectToDelete] = useState<string | null>(null);
     const { toast } = useToast();
 
+    const { data, isLoading, error } = useQuery({
+        queryKey: ["fieldnotes-dashboard"],
+        queryFn: async () => {
+            const res = await fieldNotesService.getDashboardStats();
+            return res.data;
+        },
+        refetchInterval: 30000,
+        enabled: isCompanyAdmin || hasPermission,
+    });
+
     if (!isCompanyAdmin && !hasPermission) {
         return (
             <DashboardLayout>
@@ -67,15 +77,6 @@ const FieldNotesDashboard = () => {
             </DashboardLayout>
         );
     }
-
-    const { data, isLoading, error } = useQuery({
-        queryKey: ["fieldnotes-dashboard"],
-        queryFn: async () => {
-            const res = await fieldNotesService.getDashboardStats();
-            return res.data;
-        },
-        refetchInterval: 30000,
-    });
 
     if (isLoading) {
         return (

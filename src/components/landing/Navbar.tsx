@@ -58,7 +58,7 @@ export const Navbar = () => {
     visible: { 
       x: 0, 
       opacity: 1,
-      transition: { type: "spring", stiffness: 120, damping: 16, delay: 2.5 }
+      transition: { type: "spring" as const, stiffness: 120, damping: 16, delay: 2.5 }
     }
   };
 
@@ -77,7 +77,7 @@ export const Navbar = () => {
     visible: { 
       y: 0, 
       opacity: 1,
-      transition: { type: "spring", stiffness: 140, damping: 14 }
+      transition: { type: "spring" as const, stiffness: 140, damping: 14 }
     }
   };
 
@@ -86,7 +86,7 @@ export const Navbar = () => {
     visible: { 
       x: 0, 
       opacity: 1,
-      transition: { type: "spring", stiffness: 120, damping: 16, delay: 2.9 }
+      transition: { type: "spring" as const, stiffness: 120, damping: 16, delay: 2.9 }
     }
   };
 

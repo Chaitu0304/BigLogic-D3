@@ -121,22 +121,6 @@ const EstimateTraining = () => {
   const isCompanyAdmin = user.role === "company_admin" || user.role === "superadmin";
   const hasPermission = user.permissions?.estimateTraining === true;
 
-  if (!isCompanyAdmin && !hasPermission) {
-    return (
-      <DashboardLayout>
-        <div className="flex items-center justify-center h-[60vh]">
-          <div className="text-center">
-            <div className="w-16 h-16 mx-auto bg-destructive/10 rounded-full flex items-center justify-center mb-4">
-              <Database className="w-8 h-8 text-destructive" />
-            </div>
-            <h2 className="text-xl font-bold text-foreground mb-2">Access Denied</h2>
-            <p className="text-muted-foreground">You do not have permission to access the Estimate Training module.</p>
-          </div>
-        </div>
-      </DashboardLayout>
-    );
-  }
-
   // File Upload State
   const [file, setFile] = useState<File | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -164,6 +148,7 @@ const EstimateTraining = () => {
   const [isDragging, setIsDragging] = useState(false);
 
   useEffect(() => {
+    if (!isCompanyAdmin && !hasPermission) return;
     fetchItems(documentType);
     checkProcessingStatus();
 
@@ -182,6 +167,7 @@ const EstimateTraining = () => {
 
   // Add polling for status when processing is active
   useEffect(() => {
+    if (!isCompanyAdmin && !hasPermission) return;
     let pollInterval: any;
     if (isProcessing) {
       pollInterval = setInterval(() => {
@@ -490,6 +476,22 @@ const EstimateTraining = () => {
   const existingCountGlobal = useMemo(() => items.filter(i => i.categoryName !== 'Not Assigned').length, [items]);
   const newCountGlobal = useMemo(() => items.filter(i => i.categoryName === 'Not Assigned').length, [items]);
   const totalItemsGlobal = items.length;
+
+  if (!isCompanyAdmin && !hasPermission) {
+    return (
+      <DashboardLayout>
+        <div className="flex items-center justify-center h-[60vh]">
+          <div className="text-center">
+            <div className="w-16 h-16 mx-auto bg-destructive/10 rounded-full flex items-center justify-center mb-4">
+              <Database className="w-8 h-8 text-destructive" />
+            </div>
+            <h2 className="text-xl font-bold text-foreground mb-2">Access Denied</h2>
+            <p className="text-muted-foreground">You do not have permission to access the Estimate Training module.</p>
+          </div>
+        </div>
+      </DashboardLayout>
+    );
+  }
 
   const renderItemOptions = (item: TrainedItem) => (
     <Popover>
