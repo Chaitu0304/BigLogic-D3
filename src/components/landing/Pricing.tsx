@@ -88,7 +88,7 @@ export const Pricing = () => {
             }`}
           >
             <span>Annually</span>
-            <span className="bg-[#0A0A0A] text-white text-[9px] font-black font-tech-landeros px-2 py-0.5 rounded-full shrink-0 tracking-wider">
+            <span className="bg-[#0A0A0A] text-white text-[10.5px] font-black font-tech-landeros px-2 py-0.5 rounded-full shrink-0 tracking-wider">
               SAVE 20%
             </span>
           </button>
@@ -151,7 +151,7 @@ export const Pricing = () => {
                       / month
                     </span>
                     {isAnnual && (
-                      <span className={`text-[10px] font-black px-2 py-0.5 rounded-full tracking-wider font-tech-landeros shrink-0 ml-2 border ${
+                      <span className={`text-[11.5px] font-black px-2 py-0.5 rounded-full tracking-wider font-tech-landeros shrink-0 ml-2 border ${
                         plan.popular
                           ? "text-white bg-white/10 border-white/20"
                           : "text-[#0A0A0A] bg-black/5 border-black/10"

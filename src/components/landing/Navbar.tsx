@@ -105,7 +105,7 @@ export const Navbar = () => {
           </Link>
  
           {/* Desktop Menu Link Pill Wrappers */}
-          <div className="hidden lg:flex items-center gap-1 xl:gap-2 text-[9px] xl:text-[11px] font-bold uppercase tracking-wider text-[#6B6B6B] whitespace-nowrap shrink-0">
+          <div className="hidden lg:flex items-center gap-1 xl:gap-2 text-[10.5px] xl:text-[12.5px] font-bold uppercase tracking-wider text-[#6B6B6B] whitespace-nowrap shrink-0">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -124,7 +124,7 @@ export const Navbar = () => {
             {localStorage.getItem("token") ? (
               <button
                 onClick={() => navigate("/dashboard")}
-                className="px-4 xl:px-5 py-2.5 text-[9.5px] xl:text-[10px] font-bold btn-landeros-primary flex items-center gap-1.5 group shrink-0"
+                className="px-4 xl:px-5 py-2.5 text-[11px] xl:text-[11.5px] font-bold btn-landeros-primary flex items-center gap-1.5 group shrink-0"
               >
                 DASHBOARD <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-200" />
               </button>
@@ -132,13 +132,13 @@ export const Navbar = () => {
               <>
                 <button
                   onClick={() => navigate("/login")}
-                  className="px-4 py-2 rounded-full border border-black/5 hover:bg-neutral-100/50 transition-colors text-[9.5px] xl:text-[10px] font-bold text-[#0A0A0A] uppercase tracking-widest font-tech-landeros shrink-0 select-none"
+                  className="px-4 py-2 rounded-full border border-black/5 hover:bg-neutral-100/50 transition-colors text-[11px] xl:text-[11.5px] font-bold text-[#0A0A0A] uppercase tracking-widest font-tech-landeros shrink-0 select-none"
                 >
                   SIGN IN
                 </button>
                 <button
                   onClick={() => navigate("/signup")}
-                  className="px-4 xl:px-5 py-2.5 text-[9.5px] xl:text-[10px] font-bold btn-landeros-primary flex items-center gap-1.5 group shrink-0"
+                  className="px-4 xl:px-5 py-2.5 text-[11px] xl:text-[11.5px] font-bold btn-landeros-primary flex items-center gap-1.5 group shrink-0"
                 >
                   GET STARTED <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-200" />
                 </button>

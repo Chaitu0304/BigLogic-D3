@@ -327,7 +327,7 @@ export const WhyBigLogic = () => {
                     <h3 className="font-tech-landeros text-xs font-bold text-[#6B6B6B] tracking-wider uppercase">
                       {chart.title}
                     </h3>
-                    <span className="px-2.5 py-1 rounded bg-emerald-50 border border-emerald-500/10 text-emerald-600 text-[10px] font-black uppercase tracking-wider font-tech-landeros shadow-sm">
+                    <span className="px-2.5 py-1 rounded bg-emerald-50 border border-emerald-500/10 text-emerald-600 text-[11.5px] font-black uppercase tracking-wider font-tech-landeros shadow-sm">
                       {chart.multiplier}
                     </span>
                   </div>
@@ -357,7 +357,7 @@ export const WhyBigLogic = () => {
                             x="35"
                             y={yVal + 3.5}
                             textAnchor="end"
-                            className="font-tech-landeros text-[9px] font-bold fill-neutral-400"
+                            className="font-tech-landeros text-[10px] font-bold fill-neutral-400"
                           >
                             {chart.yLabels[i]}
                           </text>
@@ -379,7 +379,7 @@ export const WhyBigLogic = () => {
                         x="45"
                         y="198"
                         textAnchor="middle"
-                        className="font-tech-landeros text-[9px] font-bold fill-neutral-400"
+                        className="font-tech-landeros text-[10px] font-bold fill-neutral-400"
                       >
                         0
                       </text>
@@ -387,7 +387,7 @@ export const WhyBigLogic = () => {
                         x="105"
                         y="198"
                         textAnchor="middle"
-                        className="font-tech-landeros text-[9px] font-bold fill-neutral-400"
+                        className="font-tech-landeros text-[10px] font-bold fill-neutral-400"
                       >
                         10
                       </text>
@@ -395,7 +395,7 @@ export const WhyBigLogic = () => {
                         x="225"
                         y="198"
                         textAnchor="middle"
-                        className="font-tech-landeros text-[9px] font-bold fill-neutral-400"
+                        className="font-tech-landeros text-[10px] font-bold fill-neutral-400"
                       >
                         30
                       </text>
@@ -403,7 +403,7 @@ export const WhyBigLogic = () => {
                         x="345"
                         y="198"
                         textAnchor="middle"
-                        className="font-tech-landeros text-[9px] font-bold fill-neutral-400"
+                        className="font-tech-landeros text-[10px] font-bold fill-neutral-400"
                       >
                         50 Projects
                       </text>
@@ -510,7 +510,7 @@ export const WhyBigLogic = () => {
                     {/* ==================== STATIC ENDPOINT PRICE/TIME CALLOUT TAGS (At-A-Glance Legibility) ==================== */}
                     {/* Manual Curve Tag */}
                     <div 
-                      className="absolute bg-white border border-red-500/35 px-2 py-0.5 rounded-md text-[9px] font-extrabold text-red-600 shadow-sm pointer-events-none font-tech-landeros"
+                      className="absolute bg-white border border-red-500/35 px-2 py-0.5 rounded-md text-[10.5px] font-extrabold text-red-600 shadow-sm pointer-events-none font-tech-landeros"
                       style={{
                         left: "345px",
                         top: `${chart.manualEndY}px`,
@@ -522,7 +522,7 @@ export const WhyBigLogic = () => {
 
                     {/* BIGlogic Curve Tag */}
                     <div 
-                      className="absolute bg-emerald-500 border border-emerald-600 px-2 py-0.5 rounded-md text-[9px] font-extrabold text-white shadow-sm pointer-events-none font-tech-landeros"
+                      className="absolute bg-emerald-500 border border-emerald-600 px-2 py-0.5 rounded-md text-[10.5px] font-extrabold text-white shadow-sm pointer-events-none font-tech-landeros"
                       style={{
                         left: "345px",
                         top: `${chart.biglogicEndY}px`,
@@ -548,16 +548,16 @@ export const WhyBigLogic = () => {
                           }}
                         >
                           <div className="flex justify-between items-center border-b border-white/10 pb-1.5 mb-2">
-                            <span className="font-tech-landeros text-[9px] font-black uppercase text-neutral-400">
+                            <span className="font-tech-landeros text-[10.5px] font-black uppercase text-neutral-400">
                               Volume: {chart.points[hoveredNode.pointIdx].volume} Claims
                             </span>
-                            <span className="text-[10px] font-black text-emerald-400 uppercase font-tech-landeros">
+                            <span className="text-[11.5px] font-black text-emerald-400 uppercase font-tech-landeros">
                               {chart.points[hoveredNode.pointIdx].savings}
                             </span>
                           </div>
 
                           <div className="space-y-1.5">
-                            <div className="flex items-center justify-between text-[11px] font-semibold">
+                            <div className="flex items-center justify-between text-[12.5px] font-semibold">
                               <span className="text-red-400 flex items-center gap-1">
                                 <ShieldX className="w-3 h-3 shrink-0" /> Manual Way
                               </span>
@@ -566,7 +566,7 @@ export const WhyBigLogic = () => {
                               </span>
                             </div>
 
-                            <div className="flex items-center justify-between text-[11px] font-semibold">
+                            <div className="flex items-center justify-between text-[12.5px] font-semibold">
                               <span className="text-emerald-400 flex items-center gap-1">
                                 <ShieldCheck className="w-3 h-3 fill-emerald-500/10 shrink-0" /> BIGlogic Way
                               </span>
@@ -615,7 +615,7 @@ export const WhyBigLogic = () => {
               </div>
 
               <div className="md:col-span-4 border-l border-white/10 pl-0 md:pl-8 flex flex-col justify-center h-full">
-                <span className="text-[10px] font-bold tracking-wider text-neutral-400 uppercase font-tech-landeros block mb-1">
+                <span className="text-[11.5px] font-bold tracking-wider text-neutral-400 uppercase font-tech-landeros block mb-1">
                   AVERAGE CLAIM RECOVERY RATE
                 </span>
                 <div className="flex items-baseline gap-1">

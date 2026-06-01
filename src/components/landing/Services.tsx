@@ -120,7 +120,7 @@ export const Services = () => {
                 <motion.div 
                   onMouseEnter={() => setHoveredCard(index)}
                   onMouseLeave={() => setHoveredCard(null)}
-                  className="relative z-10 w-full h-[265px] select-none cursor-pointer group rounded-[32px] transition-shadow duration-500 overflow-visible"
+                  className="relative z-10 w-full h-[295px] select-none cursor-pointer group rounded-[32px] transition-shadow duration-500 overflow-visible"
                   animate={isHovered ? {
                     rotateY: isLeftCard ? 4 : -4,
                     rotateX: 2,
@@ -173,7 +173,7 @@ export const Services = () => {
                       </div>
 
                       {/* Description (positioned neatly under the Title & Icon row with 28px left padding) */}
-                      <p className="absolute top-[92px] left-7 pr-8 text-[11px] md:text-[12px] font-semibold leading-relaxed text-[#6B6B6B] max-w-[360px]">
+                      <p className="absolute top-[92px] left-7 pr-8 text-[12.5px] md:text-[13.5px] font-semibold leading-relaxed text-[#6B6B6B] max-w-[360px]">
                         {agent.description}
                       </p>
 

@@ -78,7 +78,7 @@ export const FomoScarcity = () => {
                   {costs.map((item, i) => (
                     <div key={i} className="py-6 first:pt-0 last:pb-0 flex flex-col sm:flex-row justify-between sm:items-center gap-4">
                       <div className="text-left max-w-md">
-                        <span className="text-[10px] font-bold tracking-wider font-tech-landeros text-black/40 block mb-1">{item.period}</span>
+                        <span className="text-[11.5px] font-bold tracking-wider font-tech-landeros text-black/40 block mb-1">{item.period}</span>
                         <h4 className="font-tech-landeros text-base font-bold text-[#0A0A0A] mb-1">{item.impact}</h4>
                       </div>
                       
@@ -99,7 +99,7 @@ export const FomoScarcity = () => {
               </div>
 
               <div className="border-t border-black/5 pt-6 mt-8 text-left">
-                <p className="text-[10px] font-bold text-[#6B6B6B] leading-relaxed uppercase tracking-wider font-tech-landeros">
+                <p className="text-[11.5px] font-bold text-[#6B6B6B] leading-relaxed uppercase tracking-wider font-tech-landeros">
                   * Calculations based on standard baseline of 4.5 hours saved per claim file, 10 claim uploads/week, billed at $75/hr estimator wage + 45-day lender approval delays.
                 </p>
               </div>
@@ -118,7 +118,7 @@ export const FomoScarcity = () => {
                 {/* Scarcity Seat Progress Bar */}
                 <div className="bg-white border border-black/8 rounded-2xl p-6 shadow-sm mb-6">
                   <div className="flex justify-between items-center mb-3">
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#6B6B6B] font-tech-landeros">BETA COHORT ENROLLMENT</span>
+                    <span className="text-[11.5px] font-bold uppercase tracking-wider text-[#6B6B6B] font-tech-landeros">BETA COHORT ENROLLMENT</span>
                     <span className="text-xs font-bold text-emerald-600 font-tech-landeros animate-pulse uppercase flex items-center gap-1">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                       13 Seats Left
@@ -136,16 +136,16 @@ export const FomoScarcity = () => {
                     />
                   </div>
                   
-                  <span className="text-[10px] font-bold text-[#6B6B6B] font-tech-landeros">87 OF 100 COHORT SEATS CLAIMED &bull; 87% CAPACITY reached</span>
+                  <span className="text-[11.5px] font-bold text-[#6B6B6B] font-tech-landeros">87 OF 100 COHORT SEATS CLAIMED &bull; 87% CAPACITY reached</span>
                 </div>
 
                 {/* Live activity ticker */}
                 <div className="space-y-3">
-                  <span className="text-[9px] font-bold uppercase tracking-wider text-[#6B6B6B] font-tech-landeros block mb-1">LIVE PIPELINE EVENTS:</span>
+                  <span className="text-[10.5px] font-bold uppercase tracking-wider text-[#6B6B6B] font-tech-landeros block mb-1">LIVE PIPELINE EVENTS:</span>
                   {activities.map((act, i) => (
                     <div key={i} className="flex justify-between items-center gap-4 bg-white/70 border border-black/5 p-3 rounded-xl text-xs font-semibold shadow-inner">
                       <span className="text-[#3A3A3A] truncate">{act.text}</span>
-                      <span className="text-[9px] font-bold text-[#6B6B6B] shrink-0 font-tech-landeros uppercase">{act.time}</span>
+                      <span className="text-[10.5px] font-bold text-[#6B6B6B] shrink-0 font-tech-landeros uppercase">{act.time}</span>
                     </div>
                   ))}
                 </div>

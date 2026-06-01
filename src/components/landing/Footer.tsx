@@ -132,7 +132,7 @@ export const Footer = () => {
             {/* Newsletter input - Sleek, compacted premium Glassmorphic style */}
             <div className="mt-5 p-4 border border-white/10 bg-white/[0.02] backdrop-blur-xl rounded-2xl shadow-xl relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-r from-white/[0.01] to-transparent pointer-events-none" />
-              <p className="text-[9px] font-bold uppercase text-amber-400 mb-2 tracking-widest font-tech-landeros flex items-center gap-1.5 select-none">
+              <p className="text-[10.5px] font-bold uppercase text-amber-400 mb-2 tracking-widest font-tech-landeros flex items-center gap-1.5 select-none">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
                 ENGINEERING CHANGELOG
               </p>
@@ -155,7 +155,7 @@ export const Footer = () => {
         </div>
 
         {/* Trust & Guarantee Badge Row - Translucent green glass capsules */}
-        <div className="pt-5 border-t border-white/10 flex flex-wrap justify-between items-center gap-4 mb-4 text-[9px] font-bold uppercase tracking-wider font-tech-landeros text-[#9E9E9E]">
+        <div className="pt-5 border-t border-white/10 flex flex-wrap justify-between items-center gap-4 mb-4 text-[10.5px] font-bold uppercase tracking-wider font-tech-landeros text-[#9E9E9E]">
           <div className="flex flex-wrap gap-2.5 items-center">
             <span className="flex items-center gap-1.5 border border-emerald-500/15 px-3 py-1 bg-emerald-500/[0.03] text-emerald-400 rounded-full select-none shadow-[0_1px_1px_rgba(16,185,129,0.02)]">
               <ShieldCheck className="w-3 h-3 text-emerald-400 stroke-[2.5]" />
@@ -178,10 +178,10 @@ export const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-5 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-3 text-xs font-medium text-[#9E9E9E] pb-4">
-          <p className="relative z-10 text-[11px]">
+          <p className="relative z-10 text-[12.5px]">
             © {new Date().getFullYear()} BigLogic Inc. All rights reserved. Made in U.S.A.
           </p>
-          <div className="flex gap-4 font-semibold relative z-10 text-[11px]">
+          <div className="flex gap-4 font-semibold relative z-10 text-[12.5px]">
             <Link to="/signup" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="/signup" className="hover:text-white transition-colors">Terms of Service</Link>
             <Link to="/signup" className="hover:text-white transition-colors">Cookie Settings</Link>

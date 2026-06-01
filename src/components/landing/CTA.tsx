@@ -129,7 +129,7 @@ export const CTA = () => {
                   <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden border border-white/5 relative shadow-inner">
                     <div className="h-full bg-gradient-to-r from-amber-500 to-emerald-400 rounded-full shadow-[0_0_10px_rgba(16,185,129,0.3)]" style={{ width: "87%" }} />
                   </div>
-                  <div className="flex justify-between text-[9px] font-bold tracking-widest text-[#A3A3A3] font-tech-landeros uppercase select-none">
+                  <div className="flex justify-between text-[10.5px] font-bold tracking-widest text-[#A3A3A3] font-tech-landeros uppercase select-none">
                     <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-amber-500" />87 CLAIMED</span>
                     <span className="flex items-center gap-1 text-amber-400"><span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />13 SPOTS REMAINING</span>
                   </div>
@@ -141,7 +141,7 @@ export const CTA = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-white/[0.01] to-transparent pointer-events-none" />
                   
                   <div className="text-left w-full sm:w-auto">
-                    <h4 className="text-[9px] font-bold uppercase tracking-widest text-[#A3A3A3] font-tech-landeros flex items-center gap-1.5 select-none">
+                    <h4 className="text-[10.5px] font-bold uppercase tracking-widest text-[#A3A3A3] font-tech-landeros flex items-center gap-1.5 select-none">
                       <Clock className="w-3 h-3 text-[#A3A3A3]" />
                       BETA COHORT ENROLLMENT DEADLINE:
                     </h4>
@@ -153,7 +153,7 @@ export const CTA = () => {
                           <div className="absolute top-0 inset-x-0 h-1/2 bg-white/[0.02] border-b border-white/5" />
                           <span className="drop-shadow-[0_0_8px_rgba(255,255,255,0.45)]">{timeLeft.hours.toString().padStart(2, '0')}</span>
                         </div>
-                        <span className="text-[8px] font-bold text-[#A3A3A3] mt-1 tracking-widest uppercase">HRS</span>
+                        <span className="text-[9.5px] font-bold text-[#A3A3A3] mt-1 tracking-widest uppercase">HRS</span>
                       </div>
                       <span className="text-xl font-bold text-white/30 -mt-4 animate-pulse">:</span>
                       
@@ -162,7 +162,7 @@ export const CTA = () => {
                           <div className="absolute top-0 inset-x-0 h-1/2 bg-white/[0.02] border-b border-white/5" />
                           <span className="drop-shadow-[0_0_8px_rgba(255,255,255,0.45)]">{timeLeft.minutes.toString().padStart(2, '0')}</span>
                         </div>
-                        <span className="text-[8px] font-bold text-[#A3A3A3] mt-1 tracking-widest uppercase">MINS</span>
+                        <span className="text-[9.5px] font-bold text-[#A3A3A3] mt-1 tracking-widest uppercase">MINS</span>
                       </div>
                       <span className="text-xl font-bold text-white/30 -mt-4 animate-pulse">:</span>
                       
@@ -171,15 +171,15 @@ export const CTA = () => {
                           <div className="absolute top-0 inset-x-0 h-1/2 bg-white/[0.02] border-b border-white/5" />
                           <span className="drop-shadow-[0_0_8px_rgba(245,158,11,0.55)]">{timeLeft.seconds.toString().padStart(2, '0')}</span>
                         </div>
-                        <span className="text-[8px] font-bold text-amber-400/80 mt-1 tracking-widest uppercase">SECS</span>
+                        <span className="text-[9.5px] font-bold text-amber-400/80 mt-1 tracking-widest uppercase">SECS</span>
                       </div>
                     </div>
                   </div>
                   
                   {/* Cohort Capacity Stats Block */}
                   <div className="shrink-0 flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-2 w-full sm:w-auto border-t sm:border-t-0 sm:border-l border-white/10 pt-4 sm:pt-0 sm:pl-5">
-                    <span className="text-[8px] font-bold text-[#A3A3A3] tracking-widest uppercase">COHORT CAPACITY</span>
-                    <span className="px-3 py-1.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[10px] font-bold uppercase tracking-widest font-tech-landeros animate-pulse shadow-[0_0_15px_rgba(245,158,11,0.1)]">
+                    <span className="text-[9.5px] font-bold text-[#A3A3A3] tracking-widest uppercase">COHORT CAPACITY</span>
+                    <span className="px-3 py-1.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[11.5px] font-bold uppercase tracking-widest font-tech-landeros animate-pulse shadow-[0_0_15px_rgba(245,158,11,0.1)]">
                       13 SEATS LEFT
                     </span>
                   </div>
@@ -192,7 +192,7 @@ export const CTA = () => {
                 {/* Decorative absolute glow overlay */}
                 <div className="absolute -top-20 -left-20 w-40 h-40 bg-emerald-500/5 rounded-full blur-[40px] pointer-events-none" />
                 
-                <div className="absolute top-3 left-6 px-3 py-1 rounded-full bg-white text-[#0A0A0A] text-[9px] font-bold uppercase tracking-widest font-tech-landeros shadow-md border border-white/10 select-none">
+                <div className="absolute top-3 left-6 px-3 py-1 rounded-full bg-white text-[#0A0A0A] text-[10.5px] font-bold uppercase tracking-widest font-tech-landeros shadow-md border border-white/10 select-none">
                   THE 10-HOUR DOUBLE GUARANTEE
                 </div>
                 
@@ -207,14 +207,14 @@ export const CTA = () => {
 
                 {/* Hand-signed signature section */}
                 <div className="flex items-center justify-between border-t border-white/10 pt-5">
-                  <span className="flex items-center gap-1.5 text-[9px] font-bold tracking-widest font-tech-landeros text-[#A3A3A3] select-none">
+                  <span className="flex items-center gap-1.5 text-[10.5px] font-bold tracking-widest font-tech-landeros text-[#A3A3A3] select-none">
                     LEGAL BINDING CONTRACT
                   </span>
                   <div className="text-right select-none relative">
                     <div className="font-serif italic text-2xl font-semibold text-white tracking-wider font-sans select-none drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">
                       
                     </div>
-                    <div className="text-[9px] font-bold uppercase text-[#A3A3A3] mt-1 tracking-widest font-tech-landeros">Founder, BigLogicAI</div>
+                    <div className="text-[10.5px] font-bold uppercase text-[#A3A3A3] mt-1 tracking-widest font-tech-landeros">Founder, BigLogicAI</div>
                   </div>
                 </div>
 
@@ -225,7 +225,7 @@ export const CTA = () => {
             {/* Right Column - Premium Glass Receipt Invoice (5 cols) */}
             <div className="lg:col-span-5 bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[28px] shadow-2xl p-4 sm:p-6 md:p-8 flex flex-col justify-between text-left hover-premium-card z-10 overflow-visible relative group">
               {/* Approved stamp legend effect overlapping the top border */}
-              <div className="absolute top-0 left-8 sm:left-12 -translate-y-1/2 border-2 border-emerald-500 bg-[#0A0D0C] text-emerald-400 text-[10px] font-black uppercase px-4 py-1.5 rounded-xl tracking-widest select-none font-tech-landeros shadow-[0_4px_15px_rgba(16,185,129,0.25),_inset_0_1px_1px_rgba(255,255,255,0.1)] z-20 group-hover:scale-105 group-hover:shadow-[0_6px_22px_rgba(16,185,129,0.4)] transition-all duration-300">
+              <div className="absolute top-0 left-8 sm:left-12 -translate-y-1/2 border-2 border-emerald-500 bg-[#0A0D0C] text-emerald-400 text-[11.5px] font-black uppercase px-4 py-1.5 rounded-xl tracking-widest select-none font-tech-landeros shadow-[0_4px_15px_rgba(16,185,129,0.25),_inset_0_1px_1px_rgba(255,255,255,0.1)] z-20 group-hover:scale-105 group-hover:shadow-[0_6px_22px_rgba(16,185,129,0.4)] transition-all duration-300">
                 APPROVED PROPOSAL
               </div>
               
@@ -233,7 +233,7 @@ export const CTA = () => {
                 {/* Dashed receipt ticket header */}
                 <div className="border-b border-dashed border-white/15 pb-4 mb-6 text-center select-none">
                   <h3 className="font-tech-landeros text-lg font-bold text-white tracking-wider">VALUE STACK RECEIPT</h3>
-                  <span className="text-[8px] font-bold uppercase tracking-widest text-[#A3A3A3] font-tech-landeros">INVOICE_PROPOSAL_COHORT_2026</span>
+                  <span className="text-[9.5px] font-bold uppercase tracking-widest text-[#A3A3A3] font-tech-landeros">INVOICE_PROPOSAL_COHORT_2026</span>
                 </div>
 
                 {/* Stack items with line highlights */}
@@ -279,7 +279,7 @@ export const CTA = () => {
 
                 {/* Total price calculation segment */}
                 <div className="border-t border-dashed border-white/15 pt-5 mt-6 space-y-3.5">
-                  <div className="flex justify-between items-baseline font-bold text-[9px] text-[#A3A3A3] tracking-widest font-tech-landeros select-none">
+                  <div className="flex justify-between items-baseline font-bold text-[10.5px] text-[#A3A3A3] tracking-widest font-tech-landeros select-none">
                      <span>TOTAL ESTIMATED VALUE:</span>
                     <span className="line-through text-[#A3A3A3] font-mono font-bold">$4,000/mo</span>
                   </div>
@@ -289,7 +289,7 @@ export const CTA = () => {
                     <span className="text-emerald-400 text-3xl font-black drop-shadow-[0_0_12px_rgba(52,211,153,0.35)]">$199/mo</span>
                   </div>
                   
-                  <div className="text-[9px] font-bold uppercase text-emerald-400 tracking-widest text-center mt-4 bg-emerald-500/5 border border-emerald-500/10 py-2 rounded-full font-tech-landeros select-none shadow-[0_0_10px_rgba(16,185,129,0.02)]">
+                  <div className="text-[10.5px] font-bold uppercase text-emerald-400 tracking-widest text-center mt-4 bg-emerald-500/5 border border-emerald-500/10 py-2 rounded-full font-tech-landeros select-none shadow-[0_0_10px_rgba(16,185,129,0.02)]">
                     * First 3 Estimates 100% Free &bull; No Card
                   </div>
                 </div>
@@ -304,7 +304,7 @@ export const CTA = () => {
                     />
                   ))}
                 </div>
-                <div className="text-[9px] font-mono text-center text-[#A3A3A3] tracking-[0.25em] mt-1.5 select-none">
+                <div className="text-[10.5px] font-mono text-center text-[#A3A3A3] tracking-[0.25em] mt-1.5 select-none">
                   * BL-BETA-2026 *
                 </div>
 
@@ -318,7 +318,7 @@ export const CTA = () => {
                 >
                   CLAIM YOUR 3 FREE ESTIMATES <ArrowRight className="w-4 h-4 shrink-0 stroke-[2.5]" />
                 </button>
-                <div className="text-[9px] text-center font-bold uppercase tracking-widest text-[#A3A3A3] flex items-center justify-center gap-1.5 font-tech-landeros select-none">
+                <div className="text-[10.5px] text-center font-bold uppercase tracking-widest text-[#A3A3A3] flex items-center justify-center gap-1.5 font-tech-landeros select-none">
                   <ShieldCheck className="w-4 h-4 text-emerald-400" />
                   End-To-End AES-256 secure workspace
                 </div>

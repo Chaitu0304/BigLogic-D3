@@ -127,7 +127,7 @@ export const HowItWorks = () => {
 
                       {/* Subtle caption */}
                       <div className="relative z-10 text-center">
-                        <span className="text-[10px] font-bold tracking-widest text-black/40 uppercase font-sans-landeros">
+                        <span className="text-[11.5px] font-bold tracking-widest text-black/40 uppercase font-sans-landeros">
                           {step.title}
                         </span>
                       </div>

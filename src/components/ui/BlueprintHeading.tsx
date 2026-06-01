@@ -78,7 +78,7 @@ export const BlueprintHeading: React.FC<BlueprintHeadingProps> = ({
         whileInView="visible"
         viewport={{ once: true, margin: "-60px" }}
         variants={titleContainerVariants}
-        className={`font-display-landeros text-3xl md:text-5xl lg:text-[3.25rem] font-black uppercase tracking-tighter leading-[1.05] flex flex-wrap gap-x-3 gap-y-1 mb-5 ${
+        className={`font-display-landeros text-3xl md:text-5xl lg:text-[3.65rem] font-black uppercase tracking-tighter leading-[1.05] flex flex-wrap gap-x-3 gap-y-1 mb-5 ${
           isDark ? "text-white" : "text-[#0A0A0A]"
         } ${align === "center" ? "justify-center" : align === "right" ? "justify-end" : "justify-start"}`}
       >

@@ -90,7 +90,7 @@ export const TrustSecurity = () => {
                 </p>
               </div>
               <div className="border-t border-black/5 pt-4 mt-8">
-                <span className="inline-block px-3 py-1 rounded-full bg-black/5 border border-black/10 text-[10px] font-bold tracking-wider text-[#0A0A0A] font-tech-landeros">
+                <span className="inline-block px-3 py-1 rounded-full bg-black/5 border border-black/10 text-[11.5px] font-bold tracking-wider text-[#0A0A0A] font-tech-landeros">
                   MILITARY GRADE
                 </span>
               </div>
@@ -112,7 +112,7 @@ export const TrustSecurity = () => {
                 </p>
               </div>
               <div className="border-t border-black/5 pt-4 mt-8">
-                <span className="inline-block px-3 py-1 rounded-full bg-black/5 border border-black/10 text-[10px] font-bold tracking-wider text-[#0A0A0A] font-tech-landeros">
+                <span className="inline-block px-3 py-1 rounded-full bg-black/5 border border-black/10 text-[11.5px] font-bold tracking-wider text-[#0A0A0A] font-tech-landeros">
                   SANDBOXED ISOLATION
                 </span>
               </div>
@@ -134,7 +134,7 @@ export const TrustSecurity = () => {
                 </p>
               </div>
               <div className="border-t border-black/5 pt-4 mt-8">
-                <span className="inline-block px-3 py-1 rounded-full bg-black/5 border border-black/10 text-[10px] font-bold tracking-wider text-[#0A0A0A] font-tech-landeros">
+                <span className="inline-block px-3 py-1 rounded-full bg-black/5 border border-black/10 text-[11.5px] font-bold tracking-wider text-[#0A0A0A] font-tech-landeros">
                   INSURER AUDITED
                 </span>
               </div>
@@ -147,7 +147,7 @@ export const TrustSecurity = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-neutral-900 to-transparent opacity-50 pointer-events-none" />
               
               <div className="relative z-10 text-left">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/5 font-bold uppercase tracking-wider text-[10px] mb-6 font-tech-landeros text-neutral-300">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/5 font-bold uppercase tracking-wider text-[11.5px] mb-6 font-tech-landeros text-neutral-300">
                   TRUST_SECURITY_SUMMARY_ENG
                 </span>
                 
@@ -175,7 +175,7 @@ export const TrustSecurity = () => {
                 </div>
               </div>
 
-              <div className="border-t border-white/10 pt-4 mt-8 text-left relative z-10 flex justify-between items-center text-[10px] font-bold text-neutral-400 font-tech-landeros uppercase tracking-wider">
+              <div className="border-t border-white/10 pt-4 mt-8 text-left relative z-10 flex justify-between items-center text-[11.5px] font-bold text-neutral-400 font-tech-landeros uppercase tracking-wider">
                 <span>BigLogic Enterprise Security Matrix</span>
                 <span>SECURE &bull; VERIFIED</span>
               </div>

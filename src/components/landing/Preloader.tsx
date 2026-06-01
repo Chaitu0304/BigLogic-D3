@@ -260,7 +260,7 @@ export const Preloader = ({ onComplete }: { onComplete: () => void }) => {
         </div>
 
         {/* Boot Progress Log Output */}
-        <div className="font-tech-landeros text-[8.5px] font-bold tracking-widest text-neutral-400 uppercase h-4 min-w-[280px] select-none opacity-85">
+        <div className="font-tech-landeros text-[10px] font-bold tracking-widest text-neutral-400 uppercase h-4 min-w-[280px] select-none opacity-85">
           {loadingText}
         </div>
 

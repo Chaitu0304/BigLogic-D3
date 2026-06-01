@@ -434,19 +434,19 @@ export const Hero = () => {
                 <div className="w-3 h-3 rounded-full bg-[#FF5F56] border border-[#E0443E]/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]" />
                 <div className="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123]/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]" />
                 <div className="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB2F]/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)]" />
-                <span className="text-[10px] font-bold tracking-widest text-[#0A0A0A] uppercase ml-4 font-tech-landeros flex items-center gap-2">
+                <span className="text-[11.5px] font-bold tracking-widest text-[#0A0A0A] uppercase ml-4 font-tech-landeros flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping inline-block" />
                   BIGlogic System Core v2.4 (Active)
                 </span>
               </div>
-              <div className="hidden sm:flex items-center gap-1.5 bg-emerald-50 border border-emerald-500/15 rounded-full px-3 py-1.5 text-[9px] font-bold text-emerald-700 uppercase font-tech-landeros shadow-sm">
+              <div className="hidden sm:flex items-center gap-1.5 bg-emerald-50 border border-emerald-500/15 rounded-full px-3 py-1.5 text-[10.5px] font-bold text-emerald-700 uppercase font-tech-landeros shadow-sm">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
                 Audited & Secured
               </div>
             </div>
 
             {/* Dashboard Tabs for Video Simulation (Tactile Spaced Buttons) */}
-            <div className="grid grid-cols-2 md:grid-cols-4 bg-[#F5F5F3] border-b border-black/5 font-tech-landeros text-[11px] font-bold text-[#6B6B6B] p-2 gap-2">
+            <div className="grid grid-cols-2 md:grid-cols-4 bg-[#F5F5F3] border-b border-black/5 font-tech-landeros text-[12.5px] font-bold text-[#6B6B6B] p-2 gap-2">
               {tabs.map((tab) => {
                 const Icon = tab.icon;
                 const isActive = activeTab === tab.id;
@@ -512,19 +512,19 @@ export const Hero = () => {
                         {/* Faux Document Header */}
                         <div className="absolute top-0 left-0 right-0 h-8 bg-[#F8F8F8] border-b border-black/5 px-4 flex items-center justify-between">
                           <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
-                          <span className="text-[7px] font-bold text-[#6B6B6B] font-tech-landeros">ESTIMATE_PDF</span>
+                          <span className="text-[8.5px] font-bold text-[#6B6B6B] font-tech-landeros">ESTIMATE_PDF</span>
                         </div>
-
+ 
                         <FileText className="w-14 h-14 text-[#0A0A0A] mb-3 mt-4" />
-                        <span className="font-tech-landeros text-[9px] font-bold text-black/70 truncate max-w-full text-center">
+                        <span className="font-tech-landeros text-[10.5px] font-bold text-black/70 truncate max-w-full text-center">
                           Estimate_Final_Xact.pdf
                         </span>
-                        <span className="text-[8px] uppercase tracking-wider font-bold text-[#0A0A0A] bg-black/5 border border-black/10 px-2 py-0.5 rounded-full mt-2 font-tech-landeros">
+                        <span className="text-[9.5px] uppercase tracking-wider font-bold text-[#0A0A0A] bg-black/5 border border-black/10 px-2 py-0.5 rounded-full mt-2 font-tech-landeros">
                           Xactimate Source
                         </span>
                       </div>
                     </div>
-
+ 
                     {/* Right: Real-time Extraction Results */}
                     <div className="md:col-span-7 flex flex-col justify-center">
                       <div className="flex items-center gap-2 mb-4 font-tech-landeros text-xs font-bold text-[#0A0A0A]">
@@ -553,7 +553,7 @@ export const Hero = () => {
                               <span className="text-xs font-bold text-[#0A0A0A] font-tech-landeros">{item.type}:</span>
                               <span className="text-xs font-semibold text-[#3A3A3A]">{item.label}</span>
                             </div>
-                            <span className="text-[9px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-500/10 px-2 py-0.5 rounded-full font-tech-landeros">
+                            <span className="text-[10.5px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-500/10 px-2 py-0.5 rounded-full font-tech-landeros">
                               COMPLIED
                             </span>
                           </motion.div>
@@ -577,13 +577,13 @@ export const Hero = () => {
                     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6 font-tech-landeros text-left">
                       <div>
                         <h4 className="text-sm font-bold text-[#0A0A0A] tracking-tight">LIVE PROJECT DRAW ANALYTICS</h4>
-                        <p className="text-[10px] text-[#6B6B6B] font-semibold mt-0.5 hidden sm:block">Calculated automatically from extracted PDF coordinates.</p>
+                        <p className="text-[11.5px] text-[#6B6B6B] font-semibold mt-0.5 hidden sm:block">Calculated automatically from extracted PDF coordinates.</p>
                       </div>
-                      <div className="text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-500/20 px-3 py-1.5 rounded-full uppercase tracking-wider shadow-sm shrink-0">
+                      <div className="text-[11.5px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-500/20 px-3 py-1.5 rounded-full uppercase tracking-wider shadow-sm shrink-0">
                         Compliance Score: 99.8%
                       </div>
                     </div>
-
+ 
                     {/* Stats Rows */}
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                       {[
@@ -599,18 +599,18 @@ export const Hero = () => {
                           className="bg-white border border-black/8 p-5 rounded-2xl flex flex-col justify-between shadow-sm hover:border-black/15 transition-all duration-300 relative overflow-hidden"
                         >
                           <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-black/5 to-transparent rounded-full pointer-events-none" />
-                          <span className="text-[9px] font-bold text-[#6B6B6B] tracking-wider font-tech-landeros uppercase">{card.title}</span>
+                          <span className="text-[10.5px] font-bold text-[#6B6B6B] tracking-wider font-tech-landeros uppercase">{card.title}</span>
                           <span className={`text-2xl font-black bg-gradient-to-r ${card.color} bg-clip-text text-transparent my-2 font-display-landeros`}>
                             {card.value}
                           </span>
-                          <span className="text-[9px] font-bold text-[#3A3A3A] font-tech-landeros">{card.detail}</span>
+                          <span className="text-[10.5px] font-bold text-[#3A3A3A] font-tech-landeros">{card.detail}</span>
                         </motion.div>
                       ))}
                     </div>
-
+ 
                     {/* Mini Sparkline Chart */}
                     <div className="border border-black/8 bg-white p-5 rounded-2xl shadow-sm h-36 flex flex-col justify-between relative overflow-hidden">
-                      <span className="text-[9px] font-bold text-[#6B6B6B] font-tech-landeros uppercase tracking-wider">PROJECT CASH VELOCITY</span>
+                      <span className="text-[10.5px] font-bold text-[#6B6B6B] font-tech-landeros uppercase tracking-wider">PROJECT CASH VELOCITY</span>
                       
                       {/* SVG Line Drawing Path with Framer Motion */}
                       <div className="h-16 w-full relative">
@@ -775,22 +775,22 @@ export const Hero = () => {
                       {/* Central Calm Operator Badge */}
                       <div className="relative w-20 h-20 rounded-full bg-[#0A0A0A] shadow-[0_8px_30px_rgba(16,185,129,0.25)] border-2 border-emerald-500 flex flex-col items-center justify-center z-10 text-white animate-pulse">
                         <User className="w-8 h-8 stroke-[1.5] text-emerald-400" />
-                        <span className="text-[7px] font-bold uppercase tracking-widest mt-1 font-tech-landeros text-emerald-400">
+                        <span className="text-[8.5px] font-bold uppercase tracking-widest mt-1 font-tech-landeros text-emerald-400">
                           CALM OP
                         </span>
                       </div>
 
                       {/* Node Labels (Premium Glass Capsules) */}
-                      <span className="absolute left-[-20px] top-[15px] px-3.5 py-1.5 bg-white/95 border border-black/8 rounded-full font-tech-landeros text-[9px] font-bold text-[#0A0A0A] shadow-sm hover:border-black/15 transition-all">
+                      <span className="absolute left-[-20px] top-[15px] px-3.5 py-1.5 bg-white/95 border border-black/8 rounded-full font-tech-landeros text-[10.5px] font-bold text-[#0A0A0A] shadow-sm hover:border-black/15 transition-all">
                         Lenders
                       </span>
-                      <span className="absolute right-[-20px] top-[15px] px-3.5 py-1.5 bg-white/95 border border-black/8 rounded-full font-tech-landeros text-[9px] font-bold text-[#0A0A0A] shadow-sm hover:border-black/15 transition-all">
+                      <span className="absolute right-[-20px] top-[15px] px-3.5 py-1.5 bg-white/95 border border-black/8 rounded-full font-tech-landeros text-[10.5px] font-bold text-[#0A0A0A] shadow-sm hover:border-black/15 transition-all">
                         Property Owners
                       </span>
-                      <span className="absolute left-[-25px] bottom-[15px] px-3.5 py-1.5 bg-white/95 border border-black/8 rounded-full font-tech-landeros text-[9px] font-bold text-[#0A0A0A] shadow-sm hover:border-black/15 transition-all">
+                      <span className="absolute left-[-25px] bottom-[15px] px-3.5 py-1.5 bg-white/95 border border-black/8 rounded-full font-tech-landeros text-[10.5px] font-bold text-[#0A0A0A] shadow-sm hover:border-black/15 transition-all">
                         Insurer Auditor
                       </span>
-                      <span className="absolute right-[-25px] bottom-[15px] px-3.5 py-1.5 bg-white/95 border border-black/8 rounded-full font-tech-landeros text-[9px] font-bold text-[#0A0A0A] shadow-sm hover:border-black/15 transition-all">
+                      <span className="absolute right-[-25px] bottom-[15px] px-3.5 py-1.5 bg-white/95 border border-black/8 rounded-full font-tech-landeros text-[10.5px] font-bold text-[#0A0A0A] shadow-sm hover:border-black/15 transition-all">
                         Subcontractors
                       </span>
 
@@ -805,7 +805,7 @@ export const Hero = () => {
                         Estimating, audits, task notifications, contract workflows, and lender draws are controlled from a single dashboard. No phone tag. No document chase.
                       </p>
                       
-                      <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-emerald-50 border border-emerald-500/10 text-emerald-700 font-bold uppercase tracking-wider text-[9px] rounded-full mt-4 font-tech-landeros shadow-sm">
+                      <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-emerald-50 border border-emerald-500/10 text-emerald-700 font-bold uppercase tracking-wider text-[10.5px] rounded-full mt-4 font-tech-landeros shadow-sm">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                         Operation Pipeline: 100% Automated
                       </div>
@@ -817,7 +817,7 @@ export const Hero = () => {
             </div>
 
             {/* Window Footer Status (Pearl White LanderOS style) */}
-            <div className="bg-[#F8F8F8] border-t border-black/5 px-6 py-4 flex items-center justify-between font-tech-landeros text-[10px] font-bold text-[#6B6B6B]">
+            <div className="bg-[#F8F8F8] border-t border-black/5 px-6 py-4 flex items-center justify-between font-tech-landeros text-[11.5px] font-bold text-[#6B6B6B]">
               <span>ACTIVE SESSION ID: BL_D2_SAAS</span>
               <span className="text-black/40 uppercase tracking-widest flex items-center gap-1.5">
                 <Check className="w-3.5 h-3.5 text-emerald-500 stroke-[3]" />

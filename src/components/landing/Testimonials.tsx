@@ -152,7 +152,7 @@ export const Testimonials = () => {
                 {proof.map((item, index) => (
                   <div 
                     key={index} 
-                    className="bg-gradient-to-b from-white to-[#FAF9F6] border border-black/[0.06] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.02)] rounded-3xl flex flex-col justify-between relative overflow-visible w-[380px] h-[380px] shrink-0 group hover:border-black/[0.16] hover:shadow-[0_24px_50px_rgba(0,0,0,0.08)] hover:-translate-y-2.5 transition-all duration-500 ease-out"
+                    className="bg-gradient-to-b from-white to-[#FAF9F6] border border-black/[0.06] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.02)] rounded-3xl flex flex-col justify-between relative overflow-visible w-[390px] h-[405px] shrink-0 group hover:border-black/[0.16] hover:shadow-[0_24px_50px_rgba(0,0,0,0.08)] hover:-translate-y-2.5 transition-all duration-500 ease-out"
                   >
                     {/* Giant Watermark Quote Decoration */}
                     <div className="absolute top-6 right-8 text-black/[0.015] z-0 transition-colors group-hover:text-black/[0.035] pointer-events-none">
@@ -182,11 +182,11 @@ export const Testimonials = () => {
                     <div className="flex items-center justify-between border-t border-black/[0.05] pt-4 mt-auto bg-[#F5F5F3]/50 -mx-8 -mb-8 p-6 rounded-b-[24px] relative z-10">
                       <div className="text-left">
                         <h4 className="font-bold text-xs text-[#0A0A0A] font-tech-landeros">{item.author}</h4>
-                        <p className="text-[10px] font-bold text-[#6B6B6B] mt-0.5">{item.role}</p>
-                        <p className="text-[9px] font-bold text-[#6B6B6B] uppercase font-tech-landeros mt-0.5">{item.location}</p>
+                        <p className="text-[11.5px] font-bold text-[#6B6B6B] mt-0.5">{item.role}</p>
+                        <p className="text-[10.5px] font-bold text-[#6B6B6B] uppercase font-tech-landeros mt-0.5">{item.location}</p>
                       </div>
                       {item.verified && (
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white border border-black/10 text-[9px] font-bold uppercase tracking-wider text-[#0A0A0A] shrink-0 shadow-sm">
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white border border-black/10 text-[10.5px] font-bold uppercase tracking-wider text-[#0A0A0A] shrink-0 shadow-sm">
                           <ShieldCheck className="w-3 h-3 text-emerald-400" />
                           <span>VERIFIED</span>
                         </span>
@@ -201,7 +201,7 @@ export const Testimonials = () => {
                 {proof.map((item, index) => (
                   <div 
                     key={`dup-${index}`} 
-                    className="bg-gradient-to-b from-white to-[#FAF9F6] border border-black/[0.06] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.02)] rounded-3xl flex flex-col justify-between relative overflow-visible w-[380px] h-[380px] shrink-0 group hover:border-black/[0.16] hover:shadow-[0_24px_50px_rgba(0,0,0,0.08)] hover:-translate-y-2.5 transition-all duration-500 ease-out"
+                    className="bg-gradient-to-b from-white to-[#FAF9F6] border border-black/[0.06] p-8 shadow-[0_8px_30px_rgba(0,0,0,0.02)] rounded-3xl flex flex-col justify-between relative overflow-visible w-[390px] h-[405px] shrink-0 group hover:border-black/[0.16] hover:shadow-[0_24px_50px_rgba(0,0,0,0.08)] hover:-translate-y-2.5 transition-all duration-500 ease-out"
                   >
                     {/* Giant Watermark Quote Decoration */}
                     <div className="absolute top-6 right-8 text-black/[0.015] z-0 transition-colors group-hover:text-black/[0.035] pointer-events-none">
@@ -231,11 +231,11 @@ export const Testimonials = () => {
                     <div className="flex items-center justify-between border-t border-black/[0.05] pt-4 mt-auto bg-[#F5F5F3]/50 -mx-8 -mb-8 p-6 rounded-b-[24px] relative z-10">
                       <div className="text-left">
                         <h4 className="font-bold text-xs text-[#0A0A0A] font-tech-landeros">{item.author}</h4>
-                        <p className="text-[10px] font-bold text-[#6B6B6B] mt-0.5">{item.role}</p>
-                        <p className="text-[9px] font-bold text-[#6B6B6B] uppercase font-tech-landeros mt-0.5">{item.location}</p>
+                        <p className="text-[11.5px] font-bold text-[#6B6B6B] mt-0.5">{item.role}</p>
+                        <p className="text-[10.5px] font-bold text-[#6B6B6B] uppercase font-tech-landeros mt-0.5">{item.location}</p>
                       </div>
                       {item.verified && (
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white border border-black/10 text-[9px] font-bold uppercase tracking-wider text-[#0A0A0A] shrink-0 shadow-sm">
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white border border-black/10 text-[10.5px] font-bold uppercase tracking-wider text-[#0A0A0A] shrink-0 shadow-sm">
                           <ShieldCheck className="w-3 h-3 text-emerald-400" />
                           <span>VERIFIED</span>
                         </span>
