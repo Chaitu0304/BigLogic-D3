@@ -44,7 +44,6 @@ export const Hero = () => {
 
   const scaleBg = useTransform(scrollY, [0, 450], [1, 1.15]);
   const opacityBg = useTransform(scrollY, [0, 300], [1, 0]);
-  const ySketch = useTransform(scrollY, [0, 1000], [0, -150]);
 
   const tabs = [
     { id: 0, label: "1. PDF Scraping", icon: Layers },
@@ -156,27 +155,27 @@ export const Hero = () => {
       </motion.div>
 
       {/* Retained Pencil Sketches beside the dashboard at z-10 behind the dashboard container */}
-      <motion.div
-        style={{ y: ySketch }}
+      <div
         className="absolute bottom-[20%] left-[-80px] lg:left-[-120px] w-[380px] h-[380px] lg:w-[600px] lg:h-[600px] pointer-events-none z-10 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_calculator_ruler.png"
           alt="Calculator and Ruler Sketch"
           className="w-full h-full object-contain scale-[1.08] drop-shadow-[2px_6px_12px_rgba(0,0,0,0.15)]"
-         style={{ clipPath: "inset(5%)" }} />
-      </motion.div>
+          style={{ clipPath: "inset(5%)" }}
+        />
+      </div>
 
-      <motion.div
-        style={{ y: ySketch }}
+      <div
         className="absolute bottom-[17%] right-[-80px] lg:right-[-120px] w-[350px] h-[350px] lg:w-[500px] lg:h-[500px] pointer-events-none z-10 mix-blend-multiply opacity-[0.15] overflow-hidden hidden md:block"
       >
         <img
           src="/sketch_tape_measure.png"
           alt="Tape Measure Sketch"
           className="w-full h-full object-contain scale-[1.08] drop-shadow-[2px_6px_12px_rgba(0,0,0,0.15)]"
-         style={{ clipPath: "inset(5%)" }} />
-      </motion.div>
+          style={{ clipPath: "inset(5%)" }}
+        />
+      </div>
 
 
       <div className="container relative z-10 mx-auto px-4 max-w-7xl">

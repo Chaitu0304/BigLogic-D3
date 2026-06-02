@@ -8,11 +8,7 @@ export const WhyBigLogic = () => {
   const [hoveredNode, setHoveredNode] = useState<{ chartId: string; pointIdx: number } | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
-  });
-  const ySketch = useTransform(scrollYProgress, [0, 1], [-80, 80]);
+  const ySketch = 0; // Static position (performance optimization)
 
   // Tab 1: Grounded, Realistic Administrative Time & Cost Data (At 50 monthly claims)
   const adminCharts = [

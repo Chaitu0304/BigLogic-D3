@@ -9,11 +9,7 @@ export const GrandSlamOffer = () => {
   const navigate = useNavigate();
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
-  });
-  const ySketch = useTransform(scrollYProgress, [0, 1], [-80, 80]);
+  const ySketch = 0; // Static position (performance optimization)
 
   return (
     <section ref={sectionRef} id="grand-slam-offer" className="py-24 bg-premium-luxury-gradient-alt bg-grid-landeros border-b border-black/5 font-sans-landeros text-[#0A0A0A] relative overflow-hidden">

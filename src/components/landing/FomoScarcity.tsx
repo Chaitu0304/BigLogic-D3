@@ -9,11 +9,7 @@ export const FomoScarcity = () => {
   const navigate = useNavigate();
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
-  });
-  const ySketch = useTransform(scrollYProgress, [0, 1], [-80, 80]);
+  const ySketch = 0; // Static position (performance optimization)
 
   const costs = [
     {

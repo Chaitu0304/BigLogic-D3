@@ -70,11 +70,7 @@ const Premium3DStar = ({ index = 0 }: { index?: number }) => {
 export const Testimonials = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
-  });
-  const ySketch = useTransform(scrollYProgress, [0, 1], [-80, 80]);
+  const ySketch = 0; // Static position (performance optimization)
 
   const proof = [
     {

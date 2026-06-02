@@ -7,11 +7,7 @@ export const Faq = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
-  });
-  const ySketch = useTransform(scrollYProgress, [0, 1], [-80, 80]);
+  const ySketch = 0; // Static position (performance optimization)
 
   const toggleItem = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);

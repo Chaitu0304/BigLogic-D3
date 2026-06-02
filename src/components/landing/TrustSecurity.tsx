@@ -6,11 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 export const TrustSecurity = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
-  });
-  const ySketch = useTransform(scrollYProgress, [0, 1], [-80, 80]);
+  const ySketch = 0; // Static position (performance optimization)
 
   return (
     <section ref={sectionRef} id="security" className="py-24 bg-premium-luxury-gradient-alt bg-grid-premium border-b border-black/5 font-sans-landeros text-[#0A0A0A] relative overflow-hidden">
